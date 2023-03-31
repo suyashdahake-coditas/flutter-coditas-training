@@ -29,11 +29,14 @@ class HomeScreen extends StatelessWidget {
           bottomNavigationBar: BottomNavigationBar(
             elevation: 0,
             items: const [
-              BottomNavigationBarItem(icon: Icon(Icons.home_filled),label: ''),
-              BottomNavigationBarItem(icon: Icon(Icons.abc_outlined),label: ''),
-              BottomNavigationBarItem(icon: Icon(Icons.add),label: ''),
-              BottomNavigationBarItem(icon: Icon(Icons.notifications),label: ''),
-              BottomNavigationBarItem(icon: Icon(Icons.account_circle),label: '')
+              BottomNavigationBarItem(icon: Icon(Icons.home_filled), label: ''),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.abc_outlined), label: ''),
+              BottomNavigationBarItem(icon: Icon(Icons.add), label: ''),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.notifications), label: ''),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.account_circle), label: '')
             ],
             currentIndex: 0,
             unselectedItemColor: Colors.purple,

@@ -51,12 +51,30 @@ class PostsListView extends StatelessWidget {
                     children: [
                       Image.asset('assets/images/plus-circle.png'),
                       const Spacer(),
-                      Text(postsData[index].commentsNo.toString(),style: const TextStyle(fontSize: 15,color: Color(0XFF828282),),),
-                      const SizedBox(width: 5,),
+                      Text(
+                        postsData[index].commentsNo.toString(),
+                        style: const TextStyle(
+                          fontSize: 15,
+                          color: Color(0XFF828282),
+                        ),
+                      ),
+                      const SizedBox(
+                        width: 5,
+                      ),
                       Image.asset('assets/images/Chat.png'),
-                      const SizedBox(width: 10,),
-                      Text(postsData[index].likes.toString(),style: const TextStyle(fontSize: 15,color: Color(0XFF828282),),),
-                      const SizedBox(width: 5,),
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      Text(
+                        postsData[index].likes.toString(),
+                        style: const TextStyle(
+                          fontSize: 15,
+                          color: Color(0XFF828282),
+                        ),
+                      ),
+                      const SizedBox(
+                        width: 5,
+                      ),
                       Image.asset('assets/images/heart.png'),
                     ],
                   ),

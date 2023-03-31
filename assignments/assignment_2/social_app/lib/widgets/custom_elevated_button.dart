@@ -4,7 +4,9 @@ class CustomElevatedButton extends StatelessWidget {
   final Widget navigation;
   final String buttonText;
 
-  const CustomElevatedButton({Key? key, required this.navigation, required this.buttonText}) : super(key: key);
+  const CustomElevatedButton(
+      {Key? key, required this.navigation, required this.buttonText})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -27,22 +29,19 @@ class CustomElevatedButton extends StatelessWidget {
         ),
         child: ElevatedButton(
           style: ButtonStyle(
-            shape:
-            MaterialStateProperty.all<RoundedRectangleBorder>(
+            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
               RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(20.0),
               ),
             ),
             // minimumSize: MaterialStateProperty.all(Size(30, 50)),
-            backgroundColor:
-            MaterialStateProperty.all(Colors.transparent),
+            backgroundColor: MaterialStateProperty.all(Colors.transparent),
             // elevation: MaterialStateProperty.all(3),
-            shadowColor:
-            MaterialStateProperty.all(Colors.transparent),
+            shadowColor: MaterialStateProperty.all(Colors.transparent),
           ),
           onPressed: () {
-            Navigator.of(context).push(MaterialPageRoute(
-                builder: (context) => navigation));
+            Navigator.of(context)
+                .push(MaterialPageRoute(builder: (context) => navigation));
           },
           child: Padding(
             padding: const EdgeInsets.only(

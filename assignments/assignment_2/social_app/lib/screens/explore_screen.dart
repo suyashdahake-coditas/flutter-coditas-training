@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:social_app/screens/home_screen.dart';
 import 'package:social_app/widgets/custom_elevated_button.dart';
 
-
-
 class ExploreScreen extends StatelessWidget {
   const ExploreScreen({Key? key}) : super(key: key);
 
@@ -50,11 +48,13 @@ class ExploreScreen extends StatelessWidget {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 85,horizontal: 25),
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 85, horizontal: 25),
                       child: SizedBox(
                         child: Text(
                           data[index],
-                          style: const TextStyle(color: Colors.white,
+                          style: const TextStyle(
+                              color: Colors.white,
                               fontWeight: FontWeight.bold,
                               fontSize: 18.0),
                         ),
