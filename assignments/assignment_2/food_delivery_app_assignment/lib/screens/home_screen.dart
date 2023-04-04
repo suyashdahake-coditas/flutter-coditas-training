@@ -45,7 +45,7 @@ class _HomeScreenState extends State<HomeScreen> {
         body: ListView.builder(
           itemCount: dummyFoods.length,
           itemBuilder: (context, index) => Padding(
-            padding: const EdgeInsets.only(top: 20,left: 20),
+            padding: const EdgeInsets.only(top: 20, left: 20),
             child: Column(
               children: [
                 SizedBox(
