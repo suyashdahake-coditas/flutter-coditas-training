@@ -1,108 +1,150 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
+import 'package:gokada_app/dummyData.dart';
 import 'package:gokada_app/screens/second_screen.dart';
-import 'package:gokada_app/widgets/custom_grid_view.dart';
-import 'package:intl/intl.dart';
+import 'package:gokada_app/widgets/custom_list_view.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   HomeScreen({super.key});
 
-  final DateTime _currentDate = DateTime.now();
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  bool _isExpanded = true;
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      child: Container(
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-            colors: [
-              const Color(0XFF00C795).withOpacity(0.85),
-              const Color(0XFF00C795).withOpacity(0.68)
-            ],
-          ),
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        elevation: 0,
+        leading: IconButton(
+          color: Colors.black,
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => HomeScreen()),
+            );
+          },
         ),
-        child: Scaffold(
-          backgroundColor: Colors.transparent,
-          drawer: Drawer(),
-          appBar: AppBar(
-            backgroundColor: Colors.transparent,
-            title: SizedBox(
-              height: 30,
-              child: Image.asset('assets/images/gokada_icon2.png'),
+        title: SizedBox(
+          height: 40,
+          child: Image.asset('assets/images/gokada_icon.png'),
+        ),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: SizedBox(
+              width: 15,
+              child: Image.asset('assets/images/search.png'),
             ),
-            elevation: 0,
-            actions: [
-              Image.asset(
-                'assets/images/qnmark.png',
-              )
-            ],
           ),
-          body: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 35, horizontal: 20),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                const Text(
-                  "Hello, John!",
-                  style: TextStyle(
-                      fontSize: 25,
-                      fontFamily: 'Actor',
-                      color: Colors.white,
-                      fontWeight: FontWeight.normal),
-                ),
-                const SizedBox(
-                  height: 8,
-                ),
-                Text(
-                  DateFormat('EEEE, MMM dd yyyy').format(_currentDate),
-                  style: TextStyle(color: Color(0xFFFFFFFF).withOpacity(0.85),fontFamily: 'Roboto'),
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                CustomGridView(),
-                const SizedBox(
-                  height: 60,
-                ),
-                Container(
-                  alignment: Alignment.bottomCenter,
-                  child: SizedBox(
-                    width: 200,
-                    height: 50,
-                    child: ElevatedButton(
-                      style: ButtonStyle(
-                        padding:
-                            MaterialStateProperty.all(const EdgeInsets.all(8)),
-                        // elevation: MaterialStateProperty.all(6),
-                        backgroundColor: MaterialStateProperty.all(
-                          const Color(0XFF6FDEC2),
-                        ),
-                        shape: MaterialStateProperty.all(
-                          RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(25),
-                          ),
-                        ),
-                      ),
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => SecondScreen()));
-                      },
-                      child: const Text(
-                        "Next",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 25,
-                        ),
-                      ),
-                    ),
+        ],
+      ),
+      body: Container(
+        padding: const EdgeInsets.all(10),
+        alignment: Alignment.center,
+        color: Colors.white,
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "Delivery To ",
+                    style: TextStyle(
+                        fontSize: 25,
+                        fontFamily: 'Actor',
+                        color: const Color(0XFF000000).withOpacity(0.5)),
                   ),
-                )
-              ],
-            ),
+                  IconButton(
+                    color: Color(0XFF000000).withOpacity(0.5),
+                    icon: Icon(_isExpanded
+                        ? Icons.keyboard_arrow_down_sharp
+                        : Icons.keyboard_arrow_up_sharp),
+                    onPressed: () {
+                      setState(() {
+                        _isExpanded = !_isExpanded;
+                      });
+                    },
+                  ),
+                ],
+              ),
+              const SizedBox(
+                height: 15,
+              ),
+              if (_isExpanded)
+                Text(
+                  'Mountain View, CA',
+                  style: TextStyle(fontSize: 35,color: const Color(0XFF000000).withOpacity(0.5)),
+                ),
+              const SizedBox(
+                height: 50,
+              ),
+              const Divider(
+                height: 3,
+                color: Colors.black,
+                indent: 3,
+                endIndent: 3,
+              ),
+              Padding(
+                padding:
+                const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const Text(
+                      'Most Popular',
+                      style: TextStyle(fontSize: 20),
+                    ),
+                    TextButton(
+                      child: const Text('View all'),
+                      onPressed: () {},
+                    )
+                  ],
+                ),
+              ),
+              CustomListView(data: mostPopularDummyData),
+              Padding(
+                padding:
+                const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const Text(
+                      'Most Popular',
+                      style: TextStyle(fontSize: 20),
+                    ),
+                    TextButton(
+                      child: const Text('View all'),
+                      onPressed: () {},
+                    )
+                  ],
+                ),
+              ),
+              CustomListView(data: nearByPopularDummyData),
+              Padding(
+                padding:
+                const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const Text(
+                      'Best Rated',
+                      style: TextStyle(fontSize: 20),
+                    ),
+                    TextButton(
+                      child: const Text('View all'),
+                      onPressed: () {},
+                    )
+                  ],
+                ),
+              ),
+              CustomListView(data: bestRatedDummyData),
+            ],
           ),
         ),
       ),

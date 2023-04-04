@@ -5,7 +5,7 @@ import '../dummyData.dart';
 class CustomListView extends StatelessWidget {
   final List data;
 
-  CustomListView({required this.data});
+  const CustomListView({super.key, required this.data});
 
   @override
   Widget build(BuildContext context) {

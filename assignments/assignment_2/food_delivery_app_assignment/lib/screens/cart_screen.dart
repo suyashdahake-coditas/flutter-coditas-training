@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class CartScreen extends StatelessWidget {
   final int cartNo;
+
   const CartScreen({Key? key, required this.cartNo}) : super(key: key);
 
   @override
@@ -30,7 +31,10 @@ class CartScreen extends StatelessWidget {
         ),
       ),
       body: Center(
-        child: Text('Your cart has $cartNo items.',style: const TextStyle(fontSize: 20,fontWeight: FontWeight.w500),),
+        child: Text(
+          'Your cart has $cartNo items.',
+          style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+        ),
       ),
     );
   }
