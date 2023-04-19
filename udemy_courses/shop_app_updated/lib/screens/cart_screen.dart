@@ -75,7 +75,7 @@ class _CartScreenState extends State<CartScreen> {
                     title: cart.items.values.toList()[index].title,
                     quantity: cart.items.values.toList()[index].quantity,
                     price: cart.items.values.toList()[index].price)),
-          )
+          ),
         ],
       ),
     );
