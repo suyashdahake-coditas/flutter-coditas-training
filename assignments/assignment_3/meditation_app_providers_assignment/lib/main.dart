@@ -15,10 +15,8 @@ class MyApp extends StatelessWidget {
     return ChangeNotifierProvider(
       create: (_) => TimerProvider(),
       child: MaterialApp(
-        title: 'Flutter Demo',
+        title: 'Meditation App',
         theme: ThemeData(
-          // textTheme: const TextTheme(titleMedium: TextStyle(fontFamily: 'Inter')),
-          primarySwatch: Colors.blue,
         ),
         home: const HomeScreen(),
       ),

@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../providers/timer_providers.dart';
+import '../widgets/custom_list_tile.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -93,58 +94,12 @@ class _HomePageState extends State<HomePage> {
                           color: Color(0xFFDBDBDB),
                           height: 0,
                         ),
-                        ListTile(
-                            title: value.stopwatchData.isEmpty
-                                ? const Text("0")
-                                : Text(
-                                    value.stopwatchData[index],
-                                    style: const TextStyle(
-                                        fontSize: 30,
-                                        fontWeight: FontWeight.w300,
-                                        fontFamily: 'Inter'),
-                                  ),
-                            trailing: SizedBox(
-                              width: 200,
-                              child: Row(
-                                children: [
-                                  const SizedBox(
-                                    width: 20,
-                                  ),
-                                  TextButton(
-                                      onPressed: () =>
-                                          value.addToFavourite(index),
-                                      child: const Text(
-                                        'Add',
-                                        style: TextStyle(
-                                            color: Color(0XFFFF7A00),
-                                            fontSize: 25,
-                                            fontFamily: 'Inter',
-                                            fontWeight: FontWeight.w400),
-                                      )),
-                                  const SizedBox(
-                                    width: 30,
-                                  ),
-                                  TextButton(
-                                      onPressed: () {
-                                        value.deleteFromFavourite(index);
-                                      },
-                                      child: const Text(
-                                        'Delete',
-                                        style: TextStyle(
-                                            color: Color(0XFF0054F8),
-                                            fontSize: 25,
-                                            fontFamily: 'Inter',
-                                            fontWeight: FontWeight.w400),
-                                      )),
-                                ],
-                              ),
-                            )),
-                        // CustomListTile(
-                        //   title: value.stopwatchData.isEmpty,
-                        //   stopwatchData: value.stopwatchData[index],
-                        //   addHandler:value.addToFavourite,
-                        //   deleteHandler: value.deleteFromFavourite,
-                        // ),
+                        CustomListTile(
+                          title: value.stopwatchData.isEmpty,
+                          stopwatchData: value.stopwatchData[index],
+                          addHandler: () => value.addToFavourite(index),
+                          deleteHandler: () => value.deleteFromFavourite(index),
+                        ),
                         const Divider(
                           thickness: 2,
                           color: Color(0xFFDBDBDB),

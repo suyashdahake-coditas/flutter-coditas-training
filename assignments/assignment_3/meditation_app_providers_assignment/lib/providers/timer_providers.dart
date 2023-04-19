@@ -27,13 +27,16 @@ class TimerProvider extends ChangeNotifier {
   }
 
   void addToFavourite(int index) {
+    print(stopwatchData);
     favouritesData.add(stopwatchData[index]);
     print(favouritesData);
     notifyListeners();
   }
 
   void deleteFromFavourite(int index) {
+    print(stopwatchData);
     favouritesData.removeAt(index);
+    print(favouritesData);
     notifyListeners();
   }
 
