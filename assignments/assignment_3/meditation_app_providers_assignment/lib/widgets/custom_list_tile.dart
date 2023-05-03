@@ -5,7 +5,14 @@ class CustomListTile extends StatelessWidget {
   final String stopwatchData;
   final VoidCallback addHandler;
   final VoidCallback deleteHandler;
-  const CustomListTile({Key? key, required this.title, required this.stopwatchData, required this.addHandler, required this.deleteHandler}) : super(key: key);
+
+  const CustomListTile(
+      {Key? key,
+      required this.title,
+      required this.stopwatchData,
+      required this.addHandler,
+      required this.deleteHandler})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -13,12 +20,12 @@ class CustomListTile extends StatelessWidget {
         title: title
             ? const Text("0")
             : Text(
-          stopwatchData,
-          style: const TextStyle(
-              fontSize: 30,
-              fontWeight: FontWeight.w300,
-              fontFamily: 'Inter'),
-        ),
+                stopwatchData,
+                style: const TextStyle(
+                    fontSize: 30,
+                    fontWeight: FontWeight.w300,
+                    fontFamily: 'Inter'),
+              ),
         trailing: SizedBox(
           width: 200,
           child: Row(
@@ -27,8 +34,7 @@ class CustomListTile extends StatelessWidget {
                 width: 20,
               ),
               TextButton(
-                  onPressed: () =>
-                     addHandler(),
+                  onPressed: () => addHandler(),
                   child: const Text(
                     'Add',
                     style: TextStyle(

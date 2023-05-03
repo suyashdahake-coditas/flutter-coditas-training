@@ -16,8 +16,7 @@ class MyApp extends StatelessWidget {
       create: (_) => TimerProvider(),
       child: MaterialApp(
         title: 'Meditation App',
-        theme: ThemeData(
-        ),
+        theme: ThemeData(),
         home: const HomeScreen(),
       ),
     );

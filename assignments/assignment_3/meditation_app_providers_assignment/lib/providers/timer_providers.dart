@@ -4,8 +4,8 @@ class TimerProvider extends ChangeNotifier {
   final Stopwatch _stopwatch = Stopwatch();
   List stopwatchData = [];
   List favouritesData = [];
-  // int index=0;
 
+  // int index=0;
 
   bool timerStarted = false;
 
