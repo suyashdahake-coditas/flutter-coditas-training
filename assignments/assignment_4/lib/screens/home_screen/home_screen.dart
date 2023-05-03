@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:mume_music_player_app/constants.dart';
 import 'package:mume_music_player_app/screens/home_screen/home_page.dart';
+import 'package:mume_music_player_app/screens/settings_screen/settings_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   HomeScreen({Key? key}) : super(key: key);
@@ -16,7 +16,7 @@ class _HomeScreenState extends State<HomeScreen> {
     HomePage(),
     HomePage(),
     HomePage(),
-    HomePage(),
+    Settings()
   ];
 
   void _onItemTapped(int index) {
@@ -28,38 +28,13 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: AppBar(
-        elevation: 0,
-        backgroundColor: Colors.white,
-        leading: Icon(
-          CupertinoIcons.music_note_2,
-          color: primaryColor,
-        ),
-        centerTitle: false,
-        title: const Text(
-          'Mume',
-          style: TextStyle(
-              fontFamily: 'Toronto Subway',
-              color: Colors.black,
-              // fontSize: 25,
-              fontWeight: FontWeight.w700),
-        ),
-        actions: const [
-          Padding(
-            padding: EdgeInsets.all(8.0),
-            child: Icon(
-              Icons.search,
-              color: Colors.black,
-            ),
-          ),
-        ],
-      ),
+      backgroundColor: Theme.of(context).primaryColor,
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
       bottomNavigationBar: ClipRRect(
         child: BottomNavigationBar(
+          type: BottomNavigationBarType.fixed,
           items: <BottomNavigationBarItem>[
             BottomNavigationBarItem(
               icon: Icon(Icons.home_filled),

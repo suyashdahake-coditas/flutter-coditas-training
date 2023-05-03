@@ -1,17 +1,22 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:mume_music_player_app/constants.dart';
 import 'package:mume_music_player_app/screens/onboarding_screen/page_1.dart';
 import 'package:mume_music_player_app/screens/onboarding_screen/page_2.dart';
 import 'package:mume_music_player_app/screens/onboarding_screen/page_3.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-class MainFeaturesPage extends StatelessWidget {
-  MainFeaturesPage({super.key});
+import '../home_screen/home_screen.dart';
+
+class OnBoardingScreen extends StatelessWidget {
+  OnBoardingScreen({super.key});
+
   final _controller = PageController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.white,
+      backgroundColor: Theme.of(context).primaryColor,
         body: Column(
           children: [
             SizedBox(
@@ -28,8 +33,8 @@ class MainFeaturesPage extends StatelessWidget {
             SmoothPageIndicator(
               controller: _controller,
               count: 3,
-              effect: const ExpandingDotsEffect(
-                  activeDotColor: Color.fromARGB(255, 231, 137, 50),
+              effect:  ExpandingDotsEffect(
+                  activeDotColor: primaryColor,
                   dotColor: Colors.grey,
                   dotHeight: 7,
                   dotWidth: 7),
@@ -38,28 +43,32 @@ class MainFeaturesPage extends StatelessWidget {
               height: 40,
             ),
             ElevatedButton(
-              onPressed: () => {
-                _controller.nextPage(
-                  duration: const Duration(milliseconds: 500),
-                  curve: Curves.easeInOut,
-                ),
+              onPressed: () {
+                int? index = _controller.page?.round();
+                if (index! < 2) {
+                  _controller.nextPage(
+                      duration: Duration(milliseconds: 500),
+                      curve: Curves.easeInOut);
+                } else {
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => HomeScreen()));
+                }
               },
               style: ElevatedButton.styleFrom(
                 padding: const EdgeInsets.symmetric(
-                  horizontal: 160.0,
-                  vertical: 16.0,
+                  horizontal: 150.0,
+                  vertical: 14.0,
                 ),
-                backgroundColor: Color.fromARGB(255, 231, 137, 50),
+                backgroundColor: primaryColor,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(
                     40.0,
                   ),
                 ),
               ),
-              child: const Text('Next'),
+              child: const Text('Next',style: TextStyle(fontSize: 20),),
             )
           ],
         ));
   }
 }
-

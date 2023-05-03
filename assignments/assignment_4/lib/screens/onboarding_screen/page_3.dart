@@ -21,20 +21,20 @@ class Page3 extends StatelessWidget {
           Positioned(
             top: 500,
             child: Container(
-              width: 430,
+              width: 395,
               height: 300,
-              padding: EdgeInsets.all(40),
+              padding: EdgeInsets.only(top: 30, left: 20, right: 20),
               decoration: BoxDecoration(
-                color: Colors.white,
+                color: Theme.of(context).primaryColor,
                 borderRadius: BorderRadius.circular(
                   55,
                 ),
               ),
               child: Column(
-                children: const [
+                children:  [
                   Text(
                     'Listen to the best audio and music with Mume now !',
-                    style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
+                    style: Theme.of(context).textTheme.displayLarge,
                     textAlign: TextAlign.center,
                   ),
                 ],
@@ -46,4 +46,3 @@ class Page3 extends StatelessWidget {
     );
   }
 }
-

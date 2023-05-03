@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mume_music_player_app/constants.dart';
 
@@ -13,9 +14,26 @@ class ArtistScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Theme.of(context).primaryColor,
       appBar: AppBar(
-        actions: [],
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back), // Set the custom icon here
+          onPressed: () => Navigator.of(context).pop(),
+        ),
+        actions: const [
+          Padding(
+            padding: EdgeInsets.all(10.0),
+            child: Icon(
+              CupertinoIcons.search,
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.only(right: 20.0,top: 10,left: 10,bottom: 10),
+            child: Icon(
+              CupertinoIcons.ellipsis_circle,
+            ),
+          ),
+        ],
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -39,7 +57,7 @@ class ArtistScreen extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            const Text('1 Album | 20 Songs | 01:25:43 mins'),
+            const Text('1 Album  |  20 Songs  |  01:25:43 mins'),
             const SizedBox(
               height: 20,
             ),
@@ -74,29 +92,20 @@ class ArtistScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 10,
                 ),
                 ElevatedButton(
                   onPressed: () {
                     // Perform play action
                   },
-                  style: ElevatedButton.styleFrom(
-                    minimumSize: Size(150, 50),
-                    elevation: 0,
-                    foregroundColor: Colors.white,
-                    backgroundColor: Color(0xFFFFF3E8),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30.0),
-                    ),
-                  ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Container(
                         width: 15.0,
                         height: 15.0,
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                           shape: BoxShape.circle,
                           color: Colors.orange,
                         ),
@@ -109,7 +118,7 @@ class ArtistScreen extends StatelessWidget {
                           ),
                         ),
                       ),
-                      SizedBox(width: 8.0),
+                      const SizedBox(width: 8.0),
                       Text(
                         "Play",
                         style: TextStyle(
@@ -127,9 +136,33 @@ class ArtistScreen extends StatelessWidget {
               height: 10,
             ),
             Divider(
+              color: Colors.grey,
               endIndent: 20,
               indent: 20,
             ),
+            const SizedBox(
+              height: 20,
+            ),
+            Padding(
+              padding: const EdgeInsets.only(right: 20),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: const [
+                  Text(
+                    'Songs',
+                    style: TextStyle(
+                        fontWeight: FontWeight.w700,
+                        fontSize: 20,
+                        fontFamily: ''),
+                  ),
+                  Text(
+                    'See All',
+                    style: TextStyle(color: Colors.orange,fontWeight: FontWeight.w700),
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(height: 30.0),
             SizedBox(
               height: 400,
               child: ListView.builder(

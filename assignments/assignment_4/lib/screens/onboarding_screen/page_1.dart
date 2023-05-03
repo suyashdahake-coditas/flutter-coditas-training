@@ -13,6 +13,7 @@ class Page1 extends StatelessWidget {
           ),
           SizedBox(
             width: double.infinity,
+            height: double.infinity,
             child: Image.asset(
               'assets/images/intro13756770.jpg',
               fit: BoxFit.cover,
@@ -21,20 +22,20 @@ class Page1 extends StatelessWidget {
           Positioned(
             top: 500,
             child: Container(
-              width: 430,
+              width: 395,
               height: 300,
-              padding: const EdgeInsets.all(40),
+              padding: EdgeInsets.only(top: 30,left: 20,right: 20),
               decoration: BoxDecoration(
-                color: Colors.white,
+                color: Theme.of(context).primaryColor,
                 borderRadius: BorderRadius.circular(
                   55,
                 ),
               ),
               child: Column(
-                children: const [
+                children:  [
                   Text(
                     'User friendly mp3 music player for your device',
-                    style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
+                    style: Theme.of(context).textTheme.displayLarge,
                     textAlign: TextAlign.center,
                   ),
                 ],
