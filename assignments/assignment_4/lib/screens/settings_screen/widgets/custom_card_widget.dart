@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mume_music_player_app/constants.dart';
 
 import '../../premium_screen/premium.dart';
 
@@ -30,24 +31,33 @@ class CustomCardWidget extends StatelessWidget {
               const SizedBox(height: 10),
               const Text(
                 "Enjoy All Benefits!",
-                style: TextStyle(color: Colors.white, fontSize: 25),
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 30,
+                    fontFamily: 'Urbanist',
+                    fontWeight: FontWeight.bold),
               ),
               const SizedBox(
                 height: 15,
               ),
               const SizedBox(
-                width: 220,
+                width: 183,
                 child: Text(
-                  "Enjoy listening songs with better audio quality, without restrictions,and without ads.",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontFamily: 'Urbanist',
+                  ),
+                  "Enjoy listening songs with better audio quality, without restrictions, and without ads.",
                 ),
               ),
               const SizedBox(
                 height: 10,
               ),
               ElevatedButton(
-                style: const ButtonStyle(
-                  backgroundColor: MaterialStatePropertyAll(Colors.white),
-                  ),
+                style: ButtonStyle(
+                  minimumSize: MaterialStateProperty.all(const Size(140, 40)),
+                  backgroundColor: const MaterialStatePropertyAll(Colors.white),
+                ),
                 onPressed: () {
                   Navigator.push(
                     context,
@@ -56,10 +66,13 @@ class CustomCardWidget extends StatelessWidget {
                     ),
                   );
                 },
-                child: const Text(
+                child: Text(
                   "Get Premium",
                   style: TextStyle(
-                    color: Color.fromARGB(216, 249, 124, 0),
+                    fontFamily: 'Urbanist',
+                    fontSize: 20,
+                    fontWeight: FontWeight.w500,
+                    color: primaryColor,
                   ),
                 ),
               ),

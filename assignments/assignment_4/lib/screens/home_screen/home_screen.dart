@@ -1,10 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mume_music_player_app/screens/home_screen/home_page.dart';
 import 'package:mume_music_player_app/screens/settings_screen/settings_screen.dart';
 
 class HomeScreen extends StatefulWidget {
-  HomeScreen({Key? key}) : super(key: key);
+  const HomeScreen({Key? key}) : super(key: key);
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -35,7 +34,7 @@ class _HomeScreenState extends State<HomeScreen> {
       bottomNavigationBar: ClipRRect(
         child: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
-          items: <BottomNavigationBarItem>[
+          items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(
               icon: Icon(Icons.home_filled),
               label: 'Home',

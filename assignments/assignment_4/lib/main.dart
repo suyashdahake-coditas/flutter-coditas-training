@@ -14,24 +14,22 @@ class MyApp extends StatefulWidget {
   State<MyApp> createState() => _MyAppState();
 }
 
-final ValueNotifier<bool> isDarkMode = ValueNotifier(true);
-
+final ValueNotifier<bool> isDarkMode = ValueNotifier(false);
 
 class _MyAppState extends State<MyApp> {
-
   @override
   Widget build(BuildContext context) {
     return ValueListenableBuilder<bool>(
         valueListenable: isDarkMode,
         builder: (BuildContext context, bool value, Widget? child) {
-      return MaterialApp(
-        themeMode: value?ThemeMode.dark:ThemeMode.light,
-        debugShowCheckedModeBanner: false,
-        title: 'Mume Music Player',
-        theme: buildLightTheme(),
-        darkTheme: buildDarkTheme(),
-        home: SplashScreen(),
-      );}
-    );
+          return MaterialApp(
+            themeMode: value ? ThemeMode.dark : ThemeMode.light,
+            debugShowCheckedModeBanner: false,
+            title: 'Mume Music Player',
+            theme: buildLightTheme(),
+            darkTheme: buildDarkTheme(),
+            home: const SplashScreen(),
+          );
+        });
   }
 }

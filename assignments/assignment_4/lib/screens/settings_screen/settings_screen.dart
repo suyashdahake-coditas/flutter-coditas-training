@@ -19,13 +19,11 @@ class _SettingsState extends State<Settings> {
   void _toggleTheme(bool newValue) {
     setState(() {
       isDarkMode.value = newValue;
-      print(themeMode);
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    print('Build');
     return ValueListenableBuilder<bool>(
       valueListenable: isDarkMode,
       builder: (BuildContext context, bool value, Widget? child) {
@@ -41,10 +39,10 @@ class _SettingsState extends State<Settings> {
                   CupertinoIcons.music_note_2,
                   color: primaryColor,
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 15,
                 ),
-                Text(
+                const Text(
                   "Settings",
                 )
               ],
@@ -82,7 +80,13 @@ class _SettingsState extends State<Settings> {
                   endingWidget: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: const [
-                        Text("English(Us)"),
+                        Text(
+                          "English (US)",
+                          style: TextStyle(
+                              fontFamily: 'Urbanist',
+                              fontSize: 20,
+                              fontWeight: FontWeight.w600),
+                        ),
                         Icon(Icons.arrow_forward_ios)
                       ]),
                 ),

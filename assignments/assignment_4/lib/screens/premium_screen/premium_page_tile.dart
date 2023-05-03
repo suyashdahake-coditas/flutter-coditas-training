@@ -33,7 +33,7 @@ class PremiumPageTile extends StatelessWidget {
                       padding: const EdgeInsets.all(20),
                       width: 120,
                       height: 200,
-                      decoration:  BoxDecoration(
+                      decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         color: primaryColor,
                       ),
@@ -47,30 +47,32 @@ class PremiumPageTile extends StatelessWidget {
                 content: SingleChildScrollView(
                   child: Column(
                     children: [
-                       Text(
+                      Text(
                         "Congratulations!",
                         style: TextStyle(
-                            color:primaryColor,
+                            color: primaryColor,
                             fontSize: 28,
+                            fontFamily: 'Urbanist',
                             fontWeight: FontWeight.bold),
                       ),
                       const SizedBox(height: 10),
                       Text(
                         "You have Successfully Subscribed $month months of Premium. Enjoy the benefits!",
                         textAlign: TextAlign.center,
+                        style: const TextStyle(fontFamily: 'Urbanist'),
                       ),
                       const SizedBox(height: 30),
                       SizedBox(
                         width: 250,
                         child: ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                              backgroundColor:primaryColor,
+                              backgroundColor: primaryColor,
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(30),
                               ),
-                              padding: EdgeInsets.all(8)),
+                              padding: const EdgeInsets.all(8)),
                           onPressed: () => Navigator.pop(context),
-                          child: Text(
+                          child: const Text(
                             'OK',
                             style: TextStyle(
                                 fontSize: 20, fontWeight: FontWeight.bold),
@@ -112,12 +114,17 @@ class PremiumPageTile extends StatelessWidget {
                       "\$ $rate ",
                       style: const TextStyle(
                           color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 25),
+                          fontWeight: FontWeight.w900,
+                          fontFamily: 'Urbanist',
+                          fontSize: 32),
                     ),
                     Text(
                       "/$month",
-                      style: const TextStyle(color: Colors.white, fontSize: 25),
+                      style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 25,
+                        fontFamily: 'Urbanist',
+                      ),
                     ),
                   ],
                 ),
@@ -138,7 +145,11 @@ class PremiumPageTile extends StatelessWidget {
                     ),
                     Text(
                       "Listening with better audio quality",
-                      style: TextStyle(color: Colors.white, fontSize: 18),
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 18,
+                        fontFamily: 'Urbanist',
+                      ),
                     ),
                   ],
                 ),
@@ -154,7 +165,11 @@ class PremiumPageTile extends StatelessWidget {
                     ),
                     Text(
                       "Listening without restrictions & ads",
-                      style: TextStyle(color: Colors.white, fontSize: 18),
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 18,
+                        fontFamily: 'Urbanist',
+                      ),
                     ),
                   ],
                 ),
@@ -170,7 +185,11 @@ class PremiumPageTile extends StatelessWidget {
                     ),
                     Text(
                       "Unlimited skips & shuffles play",
-                      style: TextStyle(color: Colors.white, fontSize: 18),
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 18,
+                        fontFamily: 'Urbanist',
+                      ),
                     ),
                   ],
                 )

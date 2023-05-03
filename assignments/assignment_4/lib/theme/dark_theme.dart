@@ -19,7 +19,7 @@ ThemeData buildDarkTheme() {
       foregroundColor: Colors.white,
     ),
     tabBarTheme: TabBarTheme(
-      labelColor:primaryColor,
+      labelColor: primaryColor,
       unselectedLabelColor: Colors.grey,
       labelStyle: const TextStyle(
         fontSize: 22.0,
@@ -33,16 +33,16 @@ ThemeData buildDarkTheme() {
         ),
       ),
     ),
-    bottomNavigationBarTheme:  BottomNavigationBarThemeData(
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
       showUnselectedLabels: true,
       backgroundColor: Colors.black,
       selectedItemColor: primaryColor,
       unselectedItemColor: Colors.grey,
-      selectedLabelStyle: TextStyle(
+      selectedLabelStyle: const TextStyle(
         fontSize: 16,
         fontWeight: FontWeight.bold,
       ),
-      unselectedLabelStyle: TextStyle(fontSize: 16),
+      unselectedLabelStyle: const TextStyle(fontSize: 16),
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ButtonStyle(

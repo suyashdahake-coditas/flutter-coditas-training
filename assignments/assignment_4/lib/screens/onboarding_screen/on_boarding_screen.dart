@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mume_music_player_app/constants.dart';
 import 'package:mume_music_player_app/screens/onboarding_screen/page_1.dart';
@@ -16,7 +15,7 @@ class OnBoardingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).primaryColor,
+        backgroundColor: Theme.of(context).primaryColor,
         body: Column(
           children: [
             SizedBox(
@@ -33,7 +32,7 @@ class OnBoardingScreen extends StatelessWidget {
             SmoothPageIndicator(
               controller: _controller,
               count: 3,
-              effect:  ExpandingDotsEffect(
+              effect: ExpandingDotsEffect(
                   activeDotColor: primaryColor,
                   dotColor: Colors.grey,
                   dotHeight: 7,
@@ -47,11 +46,11 @@ class OnBoardingScreen extends StatelessWidget {
                 int? index = _controller.page?.round();
                 if (index! < 2) {
                   _controller.nextPage(
-                      duration: Duration(milliseconds: 500),
+                      duration: const Duration(milliseconds: 500),
                       curve: Curves.easeInOut);
                 } else {
-                  Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) => HomeScreen()));
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const HomeScreen()));
                 }
               },
               style: ElevatedButton.styleFrom(
@@ -66,7 +65,10 @@ class OnBoardingScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              child: const Text('Next',style: TextStyle(fontSize: 20),),
+              child: const Text(
+                'Next',
+                style: TextStyle(fontSize: 20),
+              ),
             )
           ],
         ));

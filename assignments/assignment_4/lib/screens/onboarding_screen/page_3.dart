@@ -31,9 +31,9 @@ class Page3 extends StatelessWidget {
                 ),
               ),
               child: Column(
-                children:  [
+                children: [
                   Text(
-                    'Listen to the best audio and music with Mume now !',
+                    'Listen to the best audio and music with Mume now!',
                     style: Theme.of(context).textTheme.displayLarge,
                     textAlign: TextAlign.center,
                   ),

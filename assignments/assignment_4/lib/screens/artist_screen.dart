@@ -2,15 +2,23 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mume_music_player_app/constants.dart';
 
-class ArtistScreen extends StatelessWidget {
-  final imageUrl;
-  final artistName;
-  final songs;
+class ArtistScreen extends StatefulWidget {
+  final String imageUrl;
+  final String artistName;
+  final List songs;
 
   const ArtistScreen(
-      {Key? key, required this.imageUrl, required this.artistName, this.songs})
+      {Key? key,
+      required this.imageUrl,
+      required this.artistName,
+      required this.songs})
       : super(key: key);
 
+  @override
+  State<ArtistScreen> createState() => _ArtistScreenState();
+}
+
+class _ArtistScreenState extends State<ArtistScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,7 +36,8 @@ class ArtistScreen extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(right: 20.0,top: 10,left: 10,bottom: 10),
+            padding:
+                EdgeInsets.only(right: 20.0, top: 10, left: 10, bottom: 10),
             child: Icon(
               CupertinoIcons.ellipsis_circle,
             ),
@@ -41,7 +50,7 @@ class ArtistScreen extends StatelessWidget {
             ClipRRect(
               borderRadius: BorderRadius.circular(40.0),
               child: Image.asset(
-                imageUrl,
+                widget.imageUrl,
                 width: 250,
                 height: 250,
                 fit: BoxFit.cover,
@@ -51,8 +60,12 @@ class ArtistScreen extends StatelessWidget {
               height: 10,
             ),
             Text(
-              artistName,
-              style: TextStyle(fontSize: 40, fontWeight: FontWeight.w600,fontFamily: 'Montreal Serial',letterSpacing: 2),
+              widget.artistName,
+              style: const TextStyle(
+                  fontSize: 40,
+                  fontWeight: FontWeight.w600,
+                  fontFamily: 'Montreal Serial',
+                  letterSpacing: 2),
             ),
             const SizedBox(
               height: 20,
@@ -66,9 +79,13 @@ class ArtistScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    setState(() {
+                      widget.songs.shuffle();
+                    });
+                  },
                   style: ElevatedButton.styleFrom(
-                    minimumSize: Size(150, 50),
+                    minimumSize: const Size(150, 50),
                     foregroundColor: Colors.white,
                     backgroundColor: primaryColor,
                     elevation: 8.0,
@@ -109,7 +126,7 @@ class ArtistScreen extends StatelessWidget {
                           shape: BoxShape.circle,
                           color: Colors.orange,
                         ),
-                        child: CircleAvatar(
+                        child: const CircleAvatar(
                           backgroundColor: Colors.transparent,
                           child: Icon(
                             Icons.play_arrow,
@@ -132,10 +149,10 @@ class ArtistScreen extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
-            Divider(
+            const Divider(
               color: Colors.grey,
               endIndent: 20,
               indent: 20,
@@ -144,7 +161,7 @@ class ArtistScreen extends StatelessWidget {
               height: 20,
             ),
             Padding(
-              padding: const EdgeInsets.only(right: 20),
+              padding: const EdgeInsets.only(right: 20, left: 20),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: const [
@@ -157,18 +174,19 @@ class ArtistScreen extends StatelessWidget {
                   ),
                   Text(
                     'See All',
-                    style: TextStyle(color: Colors.orange,fontWeight: FontWeight.w700),
+                    style: TextStyle(
+                        color: Colors.orange, fontWeight: FontWeight.w700),
                   ),
                 ],
               ),
             ),
-            const SizedBox(height: 30.0),
+            const SizedBox(height: 20.0),
             SizedBox(
               height: 400,
               child: ListView.builder(
-                itemCount: songs.length,
+                itemCount: widget.songs.length,
                 itemBuilder: (BuildContext context, int index) {
-                  final song = songs[index];
+                  final song = widget.songs[index];
                   return Padding(
                     padding: const EdgeInsets.all(15.0),
                     child: Row(
@@ -184,20 +202,20 @@ class ArtistScreen extends StatelessWidget {
                             fit: BoxFit.cover,
                           ),
                         ),
-                        SizedBox(width: 16.0),
+                        const SizedBox(width: 16.0),
                         Expanded(
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
                                 song.musicName,
-                                style: TextStyle(
+                                style: const TextStyle(
                                   fontSize: 18.0,
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
-                              SizedBox(height: 8.0),
-                              Text(artistName),
+                              const SizedBox(height: 8.0),
+                              Text(widget.artistName),
                             ],
                           ),
                         ),
@@ -206,9 +224,9 @@ class ArtistScreen extends StatelessWidget {
                           height: 30.0,
                           decoration: BoxDecoration(
                             shape: BoxShape.circle,
-                            color: Colors.orange,
+                            color: primaryColor,
                           ),
-                          child: CircleAvatar(
+                          child: const CircleAvatar(
                             backgroundColor: Colors.transparent,
                             child: Icon(
                               Icons.play_arrow,
@@ -218,7 +236,7 @@ class ArtistScreen extends StatelessWidget {
                           ),
                         ),
                         IconButton(
-                          icon: Icon(Icons.more_vert),
+                          icon: const Icon(Icons.more_vert),
                           onPressed: () {},
                         ),
                       ],

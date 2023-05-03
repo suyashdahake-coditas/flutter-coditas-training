@@ -24,7 +24,7 @@ class Page1 extends StatelessWidget {
             child: Container(
               width: 395,
               height: 300,
-              padding: EdgeInsets.only(top: 30,left: 20,right: 20),
+              padding: const EdgeInsets.only(top: 30, left: 20, right: 20),
               decoration: BoxDecoration(
                 color: Theme.of(context).primaryColor,
                 borderRadius: BorderRadius.circular(
@@ -32,7 +32,7 @@ class Page1 extends StatelessWidget {
                 ),
               ),
               child: Column(
-                children:  [
+                children: [
                   Text(
                     'User friendly mp3 music player for your device',
                     style: Theme.of(context).textTheme.displayLarge,

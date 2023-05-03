@@ -45,10 +45,10 @@ class _HomePageState extends State<HomePage>
               CupertinoIcons.music_note_2,
               color: primaryColor,
             ),
-            SizedBox(
+            const SizedBox(
               width: 15,
             ),
-            Text(
+            const Text(
               "Mume",
               style: TextStyle(fontSize: 30,fontWeight: FontWeight.w800,fontFamily: 'Toronto Subway'),
             )
@@ -87,14 +87,14 @@ class _HomePageState extends State<HomePage>
                   ],
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Padding(
-                padding: EdgeInsets.only(right: 20),
+                padding: const EdgeInsets.only(right: 20),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
+                  children: const [
                     Text(
                       'Recently Played',
                       style: TextStyle(
@@ -109,8 +109,8 @@ class _HomePageState extends State<HomePage>
                   ],
                 ),
               ),
-              SizedBox(height: 30.0),
-              Container(
+              const SizedBox(height: 30.0),
+              SizedBox(
                 width: double.infinity,
                 height: 180,
                 child: ListView.builder(
@@ -119,7 +119,7 @@ class _HomePageState extends State<HomePage>
                   itemBuilder: (BuildContext context, int index) {
                     return Container(
                       width: 115.0,
-                      margin: EdgeInsets.symmetric(horizontal: 8.0),
+                      margin: const EdgeInsets.symmetric(horizontal: 8.0),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -195,10 +195,10 @@ class _HomePageState extends State<HomePage>
                               radius: 55.0,
                               backgroundImage: AssetImage(artist.imageUrl),
                             ),
-                            SizedBox(height: 8.0),
+                            const SizedBox(height: 8.0),
                             Text(
                               artist.artistName,
-                              style: TextStyle(fontSize: 20.0,fontWeight: FontWeight.w700),
+                              style: const TextStyle(fontSize: 20.0,fontWeight: FontWeight.w700),
                             ),
                           ],
                         ),
@@ -208,10 +208,10 @@ class _HomePageState extends State<HomePage>
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(right: 20),
+                padding: const EdgeInsets.only(right: 20),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
+                  children: const [
                     Text(
                       'Most Played',
                       style: TextStyle(
@@ -226,8 +226,8 @@ class _HomePageState extends State<HomePage>
                   ],
                 ),
               ),
-              SizedBox(height: 30.0),
-              Container(
+              const SizedBox(height: 30.0),
+              SizedBox(
                 width: double.infinity,
                 height: 180,
                 child: ListView.builder(
@@ -236,7 +236,7 @@ class _HomePageState extends State<HomePage>
                   itemBuilder: (BuildContext context, int index) {
                     return Container(
                       width: 115.0,
-                      margin: EdgeInsets.symmetric(horizontal: 8.0),
+                      margin: const EdgeInsets.symmetric(horizontal: 8.0),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [

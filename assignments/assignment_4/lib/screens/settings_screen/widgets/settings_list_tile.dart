@@ -18,28 +18,34 @@ class SettingsListTile extends StatefulWidget {
 class _SettingsListTileState extends State<SettingsListTile> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Theme.of(context).primaryColor,
-      height: 60,
-      width: double.infinity,
-      child: Card(
+    return GestureDetector(
+      child: Container(
         color: Theme.of(context).primaryColor,
-        elevation: 0,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Row(
-              children: [
-                widget.iconToUse,
-                SizedBox(width: 15),
-                Text(
-                  widget.settingName,
-                  style: const TextStyle(fontSize: 15),
-                )
-              ],
-            ),
-            widget.endingWidget
-          ],
+        height: 60,
+        width: double.infinity,
+        child: Card(
+          color: Theme.of(context).primaryColor,
+          elevation: 0,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Row(
+                children: [
+                  widget.iconToUse,
+                  const SizedBox(width: 15),
+                  Text(
+                    widget.settingName,
+                    style: const TextStyle(
+                      fontSize: 20,
+                      fontFamily: 'Urbanist',
+                      fontWeight: FontWeight.w600,
+                    ),
+                  )
+                ],
+              ),
+              widget.endingWidget
+            ],
+          ),
         ),
       ),
     );

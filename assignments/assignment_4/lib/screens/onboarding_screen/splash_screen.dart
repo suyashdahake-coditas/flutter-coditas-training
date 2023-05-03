@@ -38,10 +38,15 @@ class _SplashScreenState extends State<SplashScreen> {
                 image: AssetImage("assets/images/logo_2.png"),
                 width: 50,
               ),
-              SizedBox(width: 15,),
+              SizedBox(
+                width: 15,
+              ),
               Text(
                 "Mume",
-                style: TextStyle(fontSize: 50,fontWeight: FontWeight.w800,fontFamily: 'Toronto Subway'),
+                style: TextStyle(
+                    fontSize: 50,
+                    fontWeight: FontWeight.w800,
+                    fontFamily: 'Toronto Subway'),
               )
             ],
           ),

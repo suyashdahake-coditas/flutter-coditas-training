@@ -5,7 +5,7 @@ import '../constants.dart';
 ThemeData buildLightTheme() {
   return ThemeData(
     primaryColor: Colors.white,
-    textTheme: TextTheme(
+    textTheme: const TextTheme(
       displayLarge: TextStyle(
         fontSize: 40,
         fontWeight: FontWeight.bold,
@@ -37,11 +37,11 @@ ThemeData buildLightTheme() {
       backgroundColor: Colors.white,
       selectedItemColor: primaryColor,
       unselectedItemColor: Colors.grey,
-      selectedLabelStyle: TextStyle(
+      selectedLabelStyle: const TextStyle(
         fontSize: 16,
         fontWeight: FontWeight.bold,
       ),
-      unselectedLabelStyle: TextStyle(fontSize: 16),
+      unselectedLabelStyle: const TextStyle(fontSize: 16),
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ButtonStyle(

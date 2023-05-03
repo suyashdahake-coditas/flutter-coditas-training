@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Page2 extends StatelessWidget {
@@ -24,7 +23,7 @@ class Page2 extends StatelessWidget {
             child: Container(
               width: 395,
               height: 300,
-              padding: EdgeInsets.only(top: 30, left: 20, right: 20),
+              padding: const EdgeInsets.only(top: 30, left: 20, right: 20),
               decoration: BoxDecoration(
                 color: Theme.of(context).primaryColor,
                 borderRadius: BorderRadius.circular(
@@ -32,7 +31,7 @@ class Page2 extends StatelessWidget {
                 ),
               ),
               child: Column(
-                children:  [
+                children: [
                   Text(
                     'We provide a better audio experience than others',
                     style: Theme.of(context).textTheme.displayLarge,

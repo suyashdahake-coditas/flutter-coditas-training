@@ -32,6 +32,7 @@ class _PremiumPageState extends State<PremiumPage> {
                 const Text(
                   "Subscribe to Premium",
                   style: TextStyle(
+                      fontFamily: 'Urbanist',
                       color: Color.fromARGB(216, 249, 124, 0),
                       fontSize: 35,
                       fontWeight: FontWeight.bold),
@@ -39,10 +40,16 @@ class _PremiumPageState extends State<PremiumPage> {
                 const SizedBox(
                   height: 10,
                 ),
-                const Text(
-                  "Enjoy listening songs with better audio quality, without restrictions, and without ads.",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 18),
+                const SizedBox(
+                  width: 300,
+                  child: Text(
+                    "Enjoy listening songs with better audio quality, without restrictions, and without ads.",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                        fontSize: 18,
+                        fontFamily: 'Urbanist',
+                        fontWeight: FontWeight.w500),
+                  ),
                 ),
                 const SizedBox(
                   height: 20,
