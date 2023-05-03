@@ -21,6 +21,7 @@ class PremiumPageTile extends StatelessWidget {
             context: context,
             builder: (BuildContext context) {
               return AlertDialog(
+                backgroundColor: Theme.of(context).primaryColor,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(60),
                 ),
@@ -55,7 +56,7 @@ class PremiumPageTile extends StatelessWidget {
                       ),
                       const SizedBox(height: 10),
                       Text(
-                        "You have Successfully Subscribed $month months of Premium.Enjoy the benefits!",
+                        "You have Successfully Subscribed $month months of Premium. Enjoy the benefits!",
                         textAlign: TextAlign.center,
                       ),
                       const SizedBox(height: 30),

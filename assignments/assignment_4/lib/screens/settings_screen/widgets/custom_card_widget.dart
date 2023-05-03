@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import '../../../premium/premium.dart';
 
-class FirstWidget extends StatelessWidget {
-  const FirstWidget({super.key});
+import '../../premium_screen/premium.dart';
+
+class CustomCardWidget extends StatelessWidget {
+  const CustomCardWidget({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mume_music_player_app/premium/premium_page_tile.dart';
+import 'package:mume_music_player_app/screens/premium_screen/premium_page_tile.dart';
 
 class PremiumPage extends StatefulWidget {
   const PremiumPage({super.key});

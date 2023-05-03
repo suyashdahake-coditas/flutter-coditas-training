@@ -1,10 +1,10 @@
 import 'package:flutter/cupertino.dart';
-import 'package:mume_music_player_app/screens/settings_screen/widgets/setting_name.dart';
+import 'package:mume_music_player_app/screens/settings_screen/widgets/settings_list_tile.dart';
 import "package:flutter/material.dart";
 
 import '../../constants.dart';
 import '../../main.dart';
-import 'widgets/firstCardWidget.dart';
+import 'widgets/custom_card_widget.dart';
 
 ThemeMode themeMode = ThemeMode.system;
 
@@ -63,20 +63,20 @@ class _SettingsState extends State<Settings> {
             padding: const EdgeInsets.all(15),
             child: Column(
               children: [
-                const FirstWidget(),
+                const CustomCardWidget(),
                 const SizedBox(height: 10),
                 const Divider(),
-                const SettingsName(
+                const SettingsListTile(
                   iconToUse: Icon(Icons.file_upload_outlined),
                   settingName: "Backup",
                   endingWidget: Icon(Icons.arrow_forward_ios),
                 ),
-                const SettingsName(
+                const SettingsListTile(
                   iconToUse: Icon(Icons.notifications_outlined),
                   settingName: "Notification",
                   endingWidget: Icon(Icons.arrow_forward_ios),
                 ),
-                SettingsName(
+                SettingsListTile(
                   iconToUse: const Icon(Icons.language),
                   settingName: "Language",
                   endingWidget: Row(
@@ -86,7 +86,7 @@ class _SettingsState extends State<Settings> {
                         Icon(Icons.arrow_forward_ios)
                       ]),
                 ),
-                SettingsName(
+                SettingsListTile(
                   iconToUse: const Icon(Icons.remove_red_eye_outlined),
                   settingName: "Dark Mode",
                   endingWidget: CupertinoSwitch(
@@ -95,27 +95,27 @@ class _SettingsState extends State<Settings> {
                     onChanged: _toggleTheme,
                   ),
                 ),
-                const SettingsName(
+                const SettingsListTile(
                   iconToUse: Icon(Icons.share_outlined),
                   settingName: "Share App",
                   endingWidget: Icon(Icons.arrow_forward_ios),
                 ),
-                const SettingsName(
+                const SettingsListTile(
                   iconToUse: Icon(Icons.file_open_outlined),
                   settingName: "Change Log",
                   endingWidget: Icon(Icons.arrow_forward_ios),
                 ),
-                const SettingsName(
+                const SettingsListTile(
                   iconToUse: Icon(Icons.privacy_tip_outlined),
                   settingName: "Privacy Policy",
                   endingWidget: Icon(Icons.arrow_forward_ios),
                 ),
-                const SettingsName(
+                const SettingsListTile(
                   iconToUse: Icon(Icons.info_outlined),
                   settingName: "FAQ",
                   endingWidget: Icon(Icons.arrow_forward_ios),
                 ),
-                const SettingsName(
+                const SettingsListTile(
                   iconToUse: Icon(Icons.exit_to_app),
                   settingName: "Quit",
                   endingWidget: Icon(Icons.arrow_forward_ios),

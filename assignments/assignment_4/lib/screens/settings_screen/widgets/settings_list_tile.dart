@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
 
-class SettingsName extends StatefulWidget {
+class SettingsListTile extends StatefulWidget {
   final Icon iconToUse;
   final String settingName;
   final Widget endingWidget;
 
-  const SettingsName(
+  const SettingsListTile(
       {super.key,
       required this.iconToUse,
       required this.settingName,
       required this.endingWidget});
 
   @override
-  State<SettingsName> createState() => _SettingsNameState();
+  State<SettingsListTile> createState() => _SettingsListTileState();
 }
 
-class _SettingsNameState extends State<SettingsName> {
+class _SettingsListTileState extends State<SettingsListTile> {
   @override
   Widget build(BuildContext context) {
     return Container(
