@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mume_music_player_app/constants.dart';
 import 'package:mume_music_player_app/screens/premium_screen/widgets/custom_alert_dialog.dart';
 
 class PremiumPageTile extends StatelessWidget {
@@ -49,18 +50,18 @@ class PremiumPageTile extends StatelessWidget {
                   children: [
                     Text(
                       "\$ $cost ",
-                      style: const TextStyle(
+                      style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.w900,
-                          fontFamily: 'Urbanist',
+                          fontFamily: urbanist,
                           fontSize: 32),
                     ),
                     Text(
                       "/$month",
-                      style: const TextStyle(
+                      style: TextStyle(
                         color: Colors.white,
                         fontSize: 25,
-                        fontFamily: 'Urbanist',
+                        fontFamily: urbanist,
                       ),
                     ),
                   ],
@@ -72,12 +73,12 @@ class PremiumPageTile extends StatelessWidget {
                 // const SizedBox(height: 10),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
-                  children: const [
-                    Icon(
+                  children: [
+                    const Icon(
                       Icons.done,
                       color: Colors.white,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 20,
                     ),
                     Text(
@@ -85,19 +86,19 @@ class PremiumPageTile extends StatelessWidget {
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 18,
-                        fontFamily: 'Urbanist',
+                        fontFamily: urbanist,
                       ),
                     ),
                   ],
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
-                  children: const [
-                    Icon(
+                  children: [
+                    const Icon(
                       Icons.done,
                       color: Colors.white,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 20,
                     ),
                     Text(
@@ -105,19 +106,19 @@ class PremiumPageTile extends StatelessWidget {
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 18,
-                        fontFamily: 'Urbanist',
+                        fontFamily: urbanist,
                       ),
                     ),
                   ],
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
-                  children: const [
-                    Icon(
+                  children: [
+                    const Icon(
                       Icons.done,
                       color: Colors.white,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 20,
                     ),
                     Text(
@@ -125,7 +126,7 @@ class PremiumPageTile extends StatelessWidget {
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 18,
-                        fontFamily: 'Urbanist',
+                        fontFamily: urbanist,
                       ),
                     ),
                   ],

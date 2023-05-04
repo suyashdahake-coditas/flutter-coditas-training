@@ -20,14 +20,14 @@ ThemeData buildLightTheme() {
     tabBarTheme: TabBarTheme(
       labelColor: primaryColor,
       unselectedLabelColor: Colors.grey,
-      labelStyle: const TextStyle(
+      labelStyle:  TextStyle(
         fontSize: 20.0,
         fontWeight: FontWeight.bold,
-        fontFamily: 'Toronto Subway',
+        fontFamily: toronto,
       ),
-      unselectedLabelStyle: const TextStyle(
+      unselectedLabelStyle:  TextStyle(
         fontSize: 18.0,
-        fontFamily: 'Toronto Subway',
+        fontFamily: toronto,
         fontWeight: FontWeight.bold,
       ),
       indicator: BoxDecoration(
@@ -41,14 +41,14 @@ ThemeData buildLightTheme() {
       backgroundColor: Colors.white,
       selectedItemColor: primaryColor,
       unselectedItemColor: Colors.grey,
-      selectedLabelStyle: const TextStyle(
+      selectedLabelStyle:  TextStyle(
         fontSize: 16,
-        fontFamily: 'Toronto Subway',
+        fontFamily: toronto,
         fontWeight: FontWeight.bold,
       ),
-      unselectedLabelStyle: const TextStyle(
+      unselectedLabelStyle:  TextStyle(
         fontSize: 16,
-        fontFamily: 'Toronto Subway',
+        fontFamily: toronto,
       ),
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(

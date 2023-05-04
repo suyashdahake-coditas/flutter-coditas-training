@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../constants.dart';
+
 class SettingsListTile extends StatelessWidget {
   final Icon iconToUse;
   final String settingName;
@@ -30,9 +32,9 @@ class SettingsListTile extends StatelessWidget {
                   const SizedBox(width: 15),
                   Text(
                     settingName,
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontSize: 20,
-                      fontFamily: 'Urbanist',
+                      fontFamily: urbanist,
                       fontWeight: FontWeight.w600,
                     ),
                   )

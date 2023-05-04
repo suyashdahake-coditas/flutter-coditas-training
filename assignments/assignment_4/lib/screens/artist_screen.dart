@@ -61,10 +61,10 @@ class _ArtistScreenState extends State<ArtistScreen> {
             ),
             Text(
               widget.artistName,
-              style: const TextStyle(
+              style:  TextStyle(
                   fontSize: 40,
                   fontWeight: FontWeight.w600,
-                  fontFamily: 'Montreal Serial',
+                  fontFamily: montreal,
                   letterSpacing: 2),
             ),
             const SizedBox(

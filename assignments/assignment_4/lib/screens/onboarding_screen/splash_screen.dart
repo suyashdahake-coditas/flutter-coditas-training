@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:mume_music_player_app/constants.dart';
 import 'package:mume_music_player_app/screens/onboarding_screen/on_boarding_screen.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -33,12 +34,12 @@ class _SplashScreenState extends State<SplashScreen> {
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: const [
-              Image(
+            children:  [
+              const Image(
                 image: AssetImage("assets/images/logo_2.png"),
                 width: 50,
               ),
-              SizedBox(
+              const SizedBox(
                 width: 15,
               ),
               Text(
@@ -46,7 +47,7 @@ class _SplashScreenState extends State<SplashScreen> {
                 style: TextStyle(
                     fontSize: 50,
                     fontWeight: FontWeight.w800,
-                    fontFamily: 'Toronto Subway'),
+                    fontFamily: toronto),
               )
             ],
           ),

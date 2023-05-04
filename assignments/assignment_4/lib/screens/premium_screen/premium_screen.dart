@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:mume_music_player_app/screens/premium_screen/widgets/premium_page_tile.dart';
 
+import '../../constants.dart';
+
 class PremiumPage extends StatelessWidget {
   const PremiumPage({super.key});
 
@@ -24,10 +26,10 @@ class PremiumPage extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                const Text(
+                 Text(
                   "Subscribe to Premium",
                   style: TextStyle(
-                      fontFamily: 'Urbanist',
+                      fontFamily: urbanist,
                       color: Color.fromARGB(216, 249, 124, 0),
                       fontSize: 35,
                       fontWeight: FontWeight.bold),
@@ -35,14 +37,14 @@ class PremiumPage extends StatelessWidget {
                 const SizedBox(
                   height: 10,
                 ),
-                const SizedBox(
+                 SizedBox(
                   width: 300,
                   child: Text(
                     "Enjoy listening songs with better audio quality, without restrictions, and without ads.",
                     textAlign: TextAlign.center,
                     style: TextStyle(
                         fontSize: 18,
-                        fontFamily: 'Urbanist',
+                        fontFamily: urbanist,
                         fontWeight: FontWeight.w500),
                   ),
                 ),

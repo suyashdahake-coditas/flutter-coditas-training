@@ -29,23 +29,23 @@ class CustomCardWidget extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               const SizedBox(height: 10),
-              const Text(
+              Text(
                 "Enjoy All Benefits!",
                 style: TextStyle(
                     color: Colors.white,
                     fontSize: 30,
-                    fontFamily: 'Urbanist',
+                    fontFamily: urbanist,
                     fontWeight: FontWeight.bold),
               ),
               const SizedBox(
                 height: 15,
               ),
-              const SizedBox(
+              SizedBox(
                 width: 183,
                 child: Text(
                   style: TextStyle(
                     color: Colors.white,
-                    fontFamily: 'Urbanist',
+                    fontFamily: urbanist,
                   ),
                   "Enjoy listening songs with better audio quality, without restrictions, and without ads.",
                 ),
@@ -69,7 +69,7 @@ class CustomCardWidget extends StatelessWidget {
                 child: Text(
                   "Get Premium",
                   style: TextStyle(
-                    fontFamily: 'Urbanist',
+                    fontFamily: urbanist,
                     fontSize: 20,
                     fontWeight: FontWeight.w500,
                     color: primaryColor,

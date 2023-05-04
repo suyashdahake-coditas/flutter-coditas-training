@@ -35,12 +35,12 @@ class _HomePageState extends State<HomePage>
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Theme.of(context).primaryColor,
-      appBar:  AppBar(
+      appBar: AppBar(
         automaticallyImplyLeading: false,
         elevation: 0,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.start,
-          children:  [
+          children: [
             Icon(
               CupertinoIcons.music_note_2,
               color: primaryColor,
@@ -48,22 +48,25 @@ class _HomePageState extends State<HomePage>
             const SizedBox(
               width: 15,
             ),
-            const Text(
+            Text(
               "Mume",
-              style: TextStyle(fontSize: 30,fontWeight: FontWeight.w800,fontFamily: 'Toronto Subway'),
+              style: TextStyle(
+                  fontSize: 30,
+                  fontWeight: FontWeight.w800,
+                  fontFamily: toronto),
             )
           ],
         ),
-      centerTitle: false,
-      actions: const [
-        Padding(
-          padding: EdgeInsets.all(10.0),
-          child: Icon(
-            CupertinoIcons.search,
+        centerTitle: false,
+        actions: const [
+          Padding(
+            padding: EdgeInsets.all(10.0),
+            child: Icon(
+              CupertinoIcons.search,
+            ),
           ),
-        ),
-      ],
-    ),
+        ],
+      ),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.only(
@@ -74,7 +77,7 @@ class _HomePageState extends State<HomePage>
               PreferredSize(
                 preferredSize: const Size.fromHeight(kToolbarHeight),
                 child: TabBar(
-                  indicatorColor:Colors.white,
+                  indicatorColor: Colors.white,
                   indicatorWeight: 3.0,
                   isScrollable: true,
                   controller: _tabController,
@@ -104,7 +107,8 @@ class _HomePageState extends State<HomePage>
                     ),
                     Text(
                       'See All',
-                      style: TextStyle(color: Colors.orange,fontWeight: FontWeight.w700),
+                      style: TextStyle(
+                          color: Colors.orange, fontWeight: FontWeight.w700),
                     ),
                   ],
                 ),
@@ -128,7 +132,8 @@ class _HomePageState extends State<HomePage>
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(20.0),
                               image: DecorationImage(
-                                image: AssetImage(recentlyPlayed[index].imageUrl),
+                                image:
+                                    AssetImage(recentlyPlayed[index].imageUrl),
                                 fit: BoxFit.cover,
                               ),
                             ),
@@ -162,7 +167,8 @@ class _HomePageState extends State<HomePage>
                     ),
                     Text(
                       'See All',
-                      style: TextStyle(color: Colors.orange,fontWeight: FontWeight.w700),
+                      style: TextStyle(
+                          color: Colors.orange, fontWeight: FontWeight.w700),
                     ),
                   ],
                 ),
@@ -198,7 +204,8 @@ class _HomePageState extends State<HomePage>
                             const SizedBox(height: 8.0),
                             Text(
                               artist.artistName,
-                              style: const TextStyle(fontSize: 20.0,fontWeight: FontWeight.w700),
+                              style: const TextStyle(
+                                  fontSize: 20.0, fontWeight: FontWeight.w700),
                             ),
                           ],
                         ),
@@ -221,7 +228,8 @@ class _HomePageState extends State<HomePage>
                     ),
                     Text(
                       'See All',
-                      style: TextStyle(color: Colors.orange,fontWeight: FontWeight.w700),
+                      style: TextStyle(
+                          color: Colors.orange, fontWeight: FontWeight.w700),
                     ),
                   ],
                 ),
@@ -245,7 +253,8 @@ class _HomePageState extends State<HomePage>
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(20.0),
                               image: DecorationImage(
-                                image: AssetImage(recentlyPlayed[index].imageUrl),
+                                image:
+                                    AssetImage(recentlyPlayed[index].imageUrl),
                                 fit: BoxFit.cover,
                               ),
                             ),

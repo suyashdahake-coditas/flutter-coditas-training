@@ -41,14 +41,14 @@ class CustomAlertDialog extends StatelessWidget {
               style: TextStyle(
                   color: primaryColor,
                   fontSize: 28,
-                  fontFamily: 'Urbanist',
+                  fontFamily: urbanist,
                   fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 10),
             Text(
               "You have Successfully Subscribed $month of Premium. Enjoy the benefits!",
               textAlign: TextAlign.center,
-              style: const TextStyle(fontFamily: 'Urbanist'),
+              style: TextStyle(fontFamily: urbanist),
             ),
             const SizedBox(height: 30),
             SizedBox(
