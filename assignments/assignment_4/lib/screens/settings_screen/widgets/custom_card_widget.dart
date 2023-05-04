@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mume_music_player_app/constants.dart';
 
-import '../../premium_screen/premium.dart';
+import '../../premium_screen/premium_screen.dart';
 
 class CustomCardWidget extends StatelessWidget {
   const CustomCardWidget({super.key});

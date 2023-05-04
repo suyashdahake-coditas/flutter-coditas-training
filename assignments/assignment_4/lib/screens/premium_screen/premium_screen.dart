@@ -1,14 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:mume_music_player_app/screens/premium_screen/premium_page_tile.dart';
+import 'package:mume_music_player_app/screens/premium_screen/widgets/premium_page_tile.dart';
 
-class PremiumPage extends StatefulWidget {
+class PremiumPage extends StatelessWidget {
   const PremiumPage({super.key});
 
-  @override
-  State<PremiumPage> createState() => _PremiumPageState();
-}
-
-class _PremiumPageState extends State<PremiumPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,19 +50,19 @@ class _PremiumPageState extends State<PremiumPage> {
                   height: 20,
                 ),
                 PremiumPageTile(
-                    boxColor: Colors.orange, month: 'month', rate: 9.99),
+                    tileColor: Colors.orange, month: 'month', cost: 9.99),
                 const SizedBox(
                   height: 20,
                 ),
                 PremiumPageTile(
-                    boxColor: Colors.purple, month: "3 months", rate: 19.99),
+                    tileColor: Colors.purple, month: "3 months", cost: 19.99),
                 const SizedBox(
                   height: 20,
                 ),
                 PremiumPageTile(
-                    boxColor: Colors.redAccent,
+                    tileColor: Colors.redAccent,
                     month: "12 months",
-                    rate: 75.99),
+                    cost: 75.99),
               ],
             ),
           ),

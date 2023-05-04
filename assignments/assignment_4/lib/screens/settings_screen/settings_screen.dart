@@ -8,18 +8,11 @@ import 'widgets/custom_card_widget.dart';
 
 ThemeMode themeMode = ThemeMode.system;
 
-class Settings extends StatefulWidget {
+class Settings extends StatelessWidget {
   const Settings({super.key});
 
-  @override
-  State<Settings> createState() => _SettingsState();
-}
-
-class _SettingsState extends State<Settings> {
   void _toggleTheme(bool newValue) {
-    setState(() {
-      isDarkMode.value = newValue;
-    });
+    isDarkMode.value = newValue;
   }
 
   @override

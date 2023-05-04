@@ -113,9 +113,7 @@ class _ArtistScreenState extends State<ArtistScreen> {
                   width: 10,
                 ),
                 ElevatedButton(
-                  onPressed: () {
-                    // Perform play action
-                  },
+                  onPressed: () {},
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [

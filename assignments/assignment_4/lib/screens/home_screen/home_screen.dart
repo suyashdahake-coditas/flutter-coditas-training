@@ -45,7 +45,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.featured_play_list_outlined),
-              label: 'Playlist',
+              label: 'Playlists',
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.settings),

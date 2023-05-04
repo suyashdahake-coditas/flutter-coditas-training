@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class SettingsListTile extends StatefulWidget {
+class SettingsListTile extends StatelessWidget {
   final Icon iconToUse;
   final String settingName;
   final Widget endingWidget;
@@ -11,11 +11,6 @@ class SettingsListTile extends StatefulWidget {
       required this.settingName,
       required this.endingWidget});
 
-  @override
-  State<SettingsListTile> createState() => _SettingsListTileState();
-}
-
-class _SettingsListTileState extends State<SettingsListTile> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -31,10 +26,10 @@ class _SettingsListTileState extends State<SettingsListTile> {
             children: [
               Row(
                 children: [
-                  widget.iconToUse,
+                  iconToUse,
                   const SizedBox(width: 15),
                   Text(
-                    widget.settingName,
+                    settingName,
                     style: const TextStyle(
                       fontSize: 20,
                       fontFamily: 'Urbanist',
@@ -43,7 +38,7 @@ class _SettingsListTileState extends State<SettingsListTile> {
                   )
                 ],
               ),
-              widget.endingWidget
+              endingWidget
             ],
           ),
         ),

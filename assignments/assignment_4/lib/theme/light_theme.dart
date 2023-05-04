@@ -25,23 +25,31 @@ ThemeData buildLightTheme() {
         fontWeight: FontWeight.bold,
         fontFamily: 'Toronto Subway',
       ),
-      unselectedLabelStyle: const TextStyle(fontSize: 16.0),
+      unselectedLabelStyle: const TextStyle(
+        fontSize: 18.0,
+        fontFamily: 'Toronto Subway',
+        fontWeight: FontWeight.bold,
+      ),
       indicator: BoxDecoration(
         border: Border(
           bottom: BorderSide(width: 4.0, color: primaryColor),
         ),
       ),
     ),
-    bottomNavigationBarTheme:  BottomNavigationBarThemeData(
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
       showUnselectedLabels: true,
       backgroundColor: Colors.white,
       selectedItemColor: primaryColor,
       unselectedItemColor: Colors.grey,
       selectedLabelStyle: const TextStyle(
         fontSize: 16,
+        fontFamily: 'Toronto Subway',
         fontWeight: FontWeight.bold,
       ),
-      unselectedLabelStyle: const TextStyle(fontSize: 16),
+      unselectedLabelStyle: const TextStyle(
+        fontSize: 16,
+        fontFamily: 'Toronto Subway',
+      ),
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ButtonStyle(

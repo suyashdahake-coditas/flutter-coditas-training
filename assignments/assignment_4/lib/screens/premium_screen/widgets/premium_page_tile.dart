@@ -1,99 +1,37 @@
 import 'package:flutter/material.dart';
-import 'package:mume_music_player_app/constants.dart';
+import 'package:mume_music_player_app/screens/premium_screen/widgets/custom_alert_dialog.dart';
 
 class PremiumPageTile extends StatelessWidget {
   PremiumPageTile(
       {super.key,
-      required this.boxColor,
-      required this.rate,
+      required this.tileColor,
+      required this.cost,
       required this.month});
 
-  final Color boxColor;
-  final double rate;
+  final Color tileColor;
+  final double cost;
   final String month;
+
+  Future<void> _showDialogBox(BuildContext context) async {
+    return showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return CustomAlertDialog(month: month);
+      },
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Future<void> _showDialogBox(BuildContext context) async {
-          return showDialog(
-            context: context,
-            builder: (BuildContext context) {
-              return AlertDialog(
-                backgroundColor: Theme.of(context).primaryColor,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(60),
-                ),
-                alignment: Alignment.center,
-                title: Stack(
-                  alignment: Alignment.center,
-                  children: [
-                    Container(
-                      padding: const EdgeInsets.all(20),
-                      width: 120,
-                      height: 200,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: primaryColor,
-                      ),
-                      child: Image.asset(
-                        'assets/images/crown1.png',
-                        fit: BoxFit.contain,
-                      ),
-                    )
-                  ],
-                ),
-                content: SingleChildScrollView(
-                  child: Column(
-                    children: [
-                      Text(
-                        "Congratulations!",
-                        style: TextStyle(
-                            color: primaryColor,
-                            fontSize: 28,
-                            fontFamily: 'Urbanist',
-                            fontWeight: FontWeight.bold),
-                      ),
-                      const SizedBox(height: 10),
-                      Text(
-                        "You have Successfully Subscribed $month months of Premium. Enjoy the benefits!",
-                        textAlign: TextAlign.center,
-                        style: const TextStyle(fontFamily: 'Urbanist'),
-                      ),
-                      const SizedBox(height: 30),
-                      SizedBox(
-                        width: 250,
-                        child: ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                              backgroundColor: primaryColor,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(30),
-                              ),
-                              padding: const EdgeInsets.all(8)),
-                          onPressed: () => Navigator.pop(context),
-                          child: const Text(
-                            'OK',
-                            style: TextStyle(
-                                fontSize: 20, fontWeight: FontWeight.bold),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              );
-            },
-          );
-        }
-
         _showDialogBox(context);
       },
       child: Container(
         height: 280,
         width: double.infinity,
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(50), color: boxColor),
+            borderRadius: BorderRadius.circular(50), color: tileColor),
         child: Center(
           child: Padding(
             padding: const EdgeInsets.all(25),
@@ -106,12 +44,11 @@ class PremiumPageTile extends StatelessWidget {
                     "assets/images/crown1.png",
                   ),
                 ),
-                // const SizedBox(height: 5),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      "\$ $rate ",
+                      "\$ $cost ",
                       style: const TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.w900,
