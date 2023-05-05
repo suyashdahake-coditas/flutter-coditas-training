@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mume_music_player_app/screens/onboarding_screen/splash_screen.dart';
+import 'package:mume_music_player_app/screens/splash_screen/splash_screen.dart';
 import 'package:mume_music_player_app/theme/dark_theme.dart';
 import 'package:mume_music_player_app/theme/light_theme.dart';
 

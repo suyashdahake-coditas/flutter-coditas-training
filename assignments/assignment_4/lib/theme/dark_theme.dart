@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../constants.dart';
+import '../constants/color_constants.dart';
 
 ThemeData buildDarkTheme() {
   return ThemeData(
@@ -21,12 +21,12 @@ ThemeData buildDarkTheme() {
     tabBarTheme: TabBarTheme(
       labelColor: primaryColor,
       unselectedLabelColor: Colors.grey,
-      labelStyle:  TextStyle(
+      labelStyle: TextStyle(
         fontSize: 20.0,
         fontWeight: FontWeight.bold,
         fontFamily: toronto,
       ),
-      unselectedLabelStyle:  TextStyle(
+      unselectedLabelStyle: TextStyle(
         fontSize: 18.0,
         fontFamily: toronto,
         fontWeight: FontWeight.bold,
@@ -42,12 +42,12 @@ ThemeData buildDarkTheme() {
       backgroundColor: Colors.black,
       selectedItemColor: primaryColor,
       unselectedItemColor: Colors.grey,
-      selectedLabelStyle:  TextStyle(
+      selectedLabelStyle: TextStyle(
         fontSize: 16,
         fontFamily: toronto,
         fontWeight: FontWeight.bold,
       ),
-      unselectedLabelStyle:  TextStyle(
+      unselectedLabelStyle: TextStyle(
         fontSize: 16,
         fontFamily: toronto,
       ),

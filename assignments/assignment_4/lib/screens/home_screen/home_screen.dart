@@ -11,11 +11,11 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
-  static const List<Widget> _widgetOptions = <Widget>[
-    HomePage(),
-    HomePage(),
-    HomePage(),
-    Settings()
+  final List<Widget> _widgetOptions = <Widget>[
+    const HomePage(),
+    const HomePage(),
+    const HomePage(),
+    const Settings()
   ];
 
   void _onItemTapped(int index) {

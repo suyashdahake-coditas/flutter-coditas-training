@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../constants.dart';
+import '../../../constants/color_constants.dart';
 
 class SettingsListTile extends StatelessWidget {
   final Icon iconToUse;

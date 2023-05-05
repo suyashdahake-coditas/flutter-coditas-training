@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:mume_music_player_app/constants.dart';
+import 'package:mume_music_player_app/constants/color_constants.dart';
 
 class ArtistScreen extends StatefulWidget {
   final String imageUrl;
@@ -61,7 +61,7 @@ class _ArtistScreenState extends State<ArtistScreen> {
             ),
             Text(
               widget.artistName,
-              style:  TextStyle(
+              style: TextStyle(
                   fontSize: 40,
                   fontWeight: FontWeight.w600,
                   fontFamily: montreal,

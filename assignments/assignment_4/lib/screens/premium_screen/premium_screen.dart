@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mume_music_player_app/screens/premium_screen/widgets/premium_page_tile.dart';
 
-import '../../constants.dart';
+import '../../constants/color_constants.dart';
 
 class PremiumPage extends StatelessWidget {
   const PremiumPage({super.key});
@@ -30,7 +30,7 @@ class PremiumPage extends StatelessWidget {
                   "Subscribe to Premium",
                   style: TextStyle(
                       fontFamily: urbanist,
-                      color: Color.fromARGB(216, 249, 124, 0),
+                      color: const Color.fromARGB(216, 249, 124, 0),
                       fontSize: 35,
                       fontWeight: FontWeight.bold),
                 ),
@@ -51,17 +51,17 @@ class PremiumPage extends StatelessWidget {
                 const SizedBox(
                   height: 20,
                 ),
-                PremiumPageTile(
+                const PremiumPageTile(
                     tileColor: Colors.orange, month: 'month', cost: 9.99),
                 const SizedBox(
                   height: 20,
                 ),
-                PremiumPageTile(
+                const PremiumPageTile(
                     tileColor: Colors.purple, month: "3 months", cost: 19.99),
                 const SizedBox(
                   height: 20,
                 ),
-                PremiumPageTile(
+                const PremiumPageTile(
                     tileColor: Colors.redAccent,
                     month: "12 months",
                     cost: 75.99),

@@ -1,9 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:mume_music_player_app/dummyData.dart';
+import 'package:mume_music_player_app/dummy_data.dart';
 import 'package:mume_music_player_app/screens/artist_screen.dart';
+import 'package:mume_music_player_app/screens/home_screen/widgets/custom_header_list_view.dart';
+import 'package:mume_music_player_app/screens/home_screen/widgets/custom_list_view.dart';
 
-import '../../constants.dart';
+import '../../constants/color_constants.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -93,26 +95,7 @@ class _HomePageState extends State<HomePage>
               const SizedBox(
                 height: 20,
               ),
-              Padding(
-                padding: const EdgeInsets.only(right: 20),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: const [
-                    Text(
-                      'Recently Played',
-                      style: TextStyle(
-                          fontWeight: FontWeight.w600,
-                          fontSize: 20,
-                          fontFamily: ''),
-                    ),
-                    Text(
-                      'See All',
-                      style: TextStyle(
-                          color: Colors.orange, fontWeight: FontWeight.w700),
-                    ),
-                  ],
-                ),
-              ),
+              const CustomHeaderListView(headerText: 'Recently Played'),
               const SizedBox(height: 30.0),
               SizedBox(
                 width: double.infinity,
@@ -121,31 +104,9 @@ class _HomePageState extends State<HomePage>
                   scrollDirection: Axis.horizontal,
                   itemCount: recentlyPlayed.length,
                   itemBuilder: (BuildContext context, int index) {
-                    return Container(
-                      width: 115.0,
-                      margin: const EdgeInsets.symmetric(horizontal: 8.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Container(
-                            height: 115.0,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(20.0),
-                              image: DecorationImage(
-                                image:
-                                    AssetImage(recentlyPlayed[index].imageUrl),
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                          ),
-                          const SizedBox(height: 8.0),
-                          Text(
-                            recentlyPlayed[index].musicName,
-                            style: const TextStyle(
-                                fontSize: 18.0, fontWeight: FontWeight.bold),
-                          ),
-                        ],
-                      ),
+                    return CustomListView(
+                      imageUrl: recentlyPlayed[index].imageUrl,
+                      musicName: recentlyPlayed[index].musicName,
                     );
                   },
                 ),
@@ -153,26 +114,7 @@ class _HomePageState extends State<HomePage>
               const SizedBox(
                 height: 20,
               ),
-              Padding(
-                padding: const EdgeInsets.only(right: 20),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: const [
-                    Text(
-                      'Artists',
-                      style: TextStyle(
-                          fontWeight: FontWeight.w700,
-                          fontSize: 20,
-                          fontFamily: ''),
-                    ),
-                    Text(
-                      'See All',
-                      style: TextStyle(
-                          color: Colors.orange, fontWeight: FontWeight.w700),
-                    ),
-                  ],
-                ),
-              ),
+              const CustomHeaderListView(headerText: 'Artists'),
               const SizedBox(height: 30.0),
               SizedBox(
                 width: double.infinity,
@@ -214,26 +156,7 @@ class _HomePageState extends State<HomePage>
                   },
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.only(right: 20),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: const [
-                    Text(
-                      'Most Played',
-                      style: TextStyle(
-                          fontWeight: FontWeight.w700,
-                          fontSize: 20,
-                          fontFamily: ''),
-                    ),
-                    Text(
-                      'See All',
-                      style: TextStyle(
-                          color: Colors.orange, fontWeight: FontWeight.w700),
-                    ),
-                  ],
-                ),
-              ),
+              const CustomHeaderListView(headerText: 'Most Played'),
               const SizedBox(height: 30.0),
               SizedBox(
                 width: double.infinity,
@@ -242,31 +165,9 @@ class _HomePageState extends State<HomePage>
                   scrollDirection: Axis.horizontal,
                   itemCount: recentlyPlayed.length,
                   itemBuilder: (BuildContext context, int index) {
-                    return Container(
-                      width: 115.0,
-                      margin: const EdgeInsets.symmetric(horizontal: 8.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Container(
-                            height: 115.0,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(20.0),
-                              image: DecorationImage(
-                                image:
-                                    AssetImage(recentlyPlayed[index].imageUrl),
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                          ),
-                          const SizedBox(height: 8.0),
-                          Text(
-                            recentlyPlayed[index].musicName,
-                            style: const TextStyle(
-                                fontSize: 16.0, fontWeight: FontWeight.bold),
-                          ),
-                        ],
-                      ),
+                    return CustomListView(
+                      imageUrl: recentlyPlayed[index].imageUrl,
+                      musicName: recentlyPlayed[index].musicName,
                     );
                   },
                 ),

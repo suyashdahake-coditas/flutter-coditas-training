@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:mume_music_player_app/screens/settings_screen/widgets/settings_list_tile.dart';
 import "package:flutter/material.dart";
 
-import '../../constants.dart';
+import '../../constants/color_constants.dart';
 import '../../main.dart';
 import 'widgets/custom_card_widget.dart';
 

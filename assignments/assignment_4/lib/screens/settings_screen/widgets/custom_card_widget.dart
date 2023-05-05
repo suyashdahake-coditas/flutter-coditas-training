@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mume_music_player_app/constants.dart';
+import 'package:mume_music_player_app/constants/color_constants.dart';
 
 import '../../premium_screen/premium_screen.dart';
 

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:mume_music_player_app/constants.dart';
+import 'package:mume_music_player_app/constants/color_constants.dart';
 import 'package:mume_music_player_app/screens/premium_screen/widgets/custom_alert_dialog.dart';
 
 class PremiumPageTile extends StatelessWidget {
-  PremiumPageTile(
+  const PremiumPageTile(
       {super.key,
       required this.tileColor,
       required this.cost,

@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mume_music_player_app/constants.dart';
-import 'package:mume_music_player_app/screens/onboarding_screen/page_1.dart';
-import 'package:mume_music_player_app/screens/onboarding_screen/page_2.dart';
-import 'package:mume_music_player_app/screens/onboarding_screen/page_3.dart';
+import 'package:mume_music_player_app/constants/color_constants.dart';
+import 'package:mume_music_player_app/screens/onboarding_screen/widgets/custom_page_view.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import '../home_screen/home_screen.dart';
@@ -23,9 +21,18 @@ class OnBoardingScreen extends StatelessWidget {
               child: PageView(
                 controller: _controller,
                 children: const [
-                  Page1(),
-                  Page2(),
-                  Page3(),
+                  CustomPageView(
+                    imagePath: 'assets/images/intro13756770.jpg',
+                    text: 'User friendly mp3 music player for your device',
+                  ),
+                  CustomPageView(
+                    imagePath: 'assets/images/intro2.png',
+                    text: 'We provide a better audio experience than others',
+                  ),
+                  CustomPageView(
+                      imagePath: 'assets/images/intro13756851.jpg',
+                      text:
+                          'Listen to the best audio and music with Mume now!'),
                 ],
               ),
             ),
