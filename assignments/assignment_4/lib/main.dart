@@ -1,22 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:mume_music_player_app/screens/splash_screen/splash_screen.dart';
 import 'package:mume_music_player_app/theme/dark_theme.dart';
 import 'package:mume_music_player_app/theme/light_theme.dart';
 
 void main() {
+  WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+  // FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
   runApp(const MyApp());
 }
 
-class MyApp extends StatefulWidget {
+class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  @override
-  State<MyApp> createState() => _MyAppState();
-}
-
-final ValueNotifier<bool> isDarkMode = ValueNotifier(false);
-
-class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return ValueListenableBuilder<bool>(
@@ -33,3 +29,5 @@ class _MyAppState extends State<MyApp> {
         });
   }
 }
+
+final ValueNotifier<bool> isDarkMode = ValueNotifier(false);

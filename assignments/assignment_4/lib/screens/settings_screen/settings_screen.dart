@@ -6,8 +6,6 @@ import '../../constants/color_constants.dart';
 import '../../main.dart';
 import 'widgets/custom_card_widget.dart';
 
-ThemeMode themeMode = ThemeMode.system;
-
 class Settings extends StatelessWidget {
   const Settings({super.key});
 
