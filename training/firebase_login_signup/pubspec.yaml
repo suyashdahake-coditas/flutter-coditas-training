@@ -1,0 +1,50 @@
+name: firebase_login_signup
+description: A new Flutter project.
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=2.19.6 <3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  firebase_core: ^2.14.0
+  firebase_auth: ^4.6.3
+  progress_dialog_null_safe: ^1.0.7
+  shared_preferences:
+  cloud_firestore:
+  firebase_storage:
+  cupertino_icons: ^1.0.2
+  flutter_bloc: ^7.3.0
+  bloc:
+  url_launcher:
+  flutter_screenutil:
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+
+  flutter_lints: ^2.0.0
+
+
+flutter:
+
+
+  uses-material-design: true
+  assets:
+    - assets/
+
+  fonts:
+    - family: Poppins
+      fonts:
+        - asset: assets/fonts/Poppins-Medium-500.ttf
+        - asset: assets/fonts/Poppins-Regular-400.ttf
+
+    - family: Hubballi
+      fonts:
+        - asset: assets/fonts/Hubballi.ttf
