@@ -7,6 +7,11 @@ part 'login_state.dart';
 
 class LoginBloc extends Bloc<LoginEvent, LoginState> {
   LoginBloc() : super(LoginInitial()) {
+
+    on<SignInInWithGoogleLoginEvent>((event,emit){
+      emit(SignInWithGoogleState());
+    });
+
     on<ValidateLoginFieldsEvent>((event, emit) {
       if (event.key.currentState?.validate() ?? false) {
         event.key.currentState!.save();
@@ -15,5 +20,6 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
         emit(LoginFailureState(errorMessage: 'Please fill required fields.'));
       }
     });
+
   }
 }

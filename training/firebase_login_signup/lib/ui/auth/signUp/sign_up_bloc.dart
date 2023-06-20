@@ -9,7 +9,7 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
   SignUpBloc() : super(SignUpInitial()) {
     on<ValidateFieldsEvent>((event, emit) async {
       if (event.key.currentState?.validate() ?? false) {
-        if (event.acceptEula) {
+        if (event.acceptTaS) {
           event.key.currentState!.save();
           emit(ValidFields());
         } else {
@@ -22,6 +22,6 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
     });
 
     on<ToggleEulaCheckboxEvent>(
-            (event, emit) => emit(EulaToggleState(event.eulaAccepted)));
+        (event, emit) => emit(TaSToggleState(event.tasAccepted)));
   }
 }

@@ -3,8 +3,6 @@ import 'dart:io';
 import 'package:firebase_login_signup/components/already_have_an_account.dart';
 import 'package:firebase_login_signup/components/custom_text.dart';
 import 'package:firebase_login_signup/components/customized_text_form_field.dart';
-import 'package:firebase_login_signup/components/or_divider.dart';
-import 'package:firebase_login_signup/components/sigin_signup_with_google.dart';
 import 'package:firebase_login_signup/constants.dart';
 import 'package:firebase_login_signup/services/helper.dart';
 import 'package:firebase_login_signup/ui/auth/authentication_bloc.dart';
@@ -31,7 +29,7 @@ class _SignUpState extends State<SignUpScreen> {
   final GlobalKey<FormState> _key = GlobalKey();
   String? fullName, email, password, confirmPassword;
   AutovalidateMode _validate = AutovalidateMode.disabled;
-  bool acceptEULA = false;
+  bool acceptTaS = false;
 
   String? selectedValue;
   final TextEditingController textEditingController = TextEditingController();
@@ -107,11 +105,6 @@ class _SignUpState extends State<SignUpScreen> {
                                     fontSize: 36),
                               ),
                               Image.asset("assets/welcome_screen_ills.jpg"),
-                              const SizedBox(height: defaultPadding),
-                              const SigninSinupGoogle(
-                                text: "Sign Up with Google",
-                              ),
-                              const OrDivider(),
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
@@ -181,7 +174,7 @@ class _SignUpState extends State<SignUpScreen> {
                                     onFieldSubmitted: (_) =>
                                         context.read<SignUpBloc>().add(
                                               ValidateFieldsEvent(_key,
-                                                  acceptEula: acceptEULA),
+                                                  acceptTaS: acceptTaS),
                                             ),
                                     obscureText: true,
                                     validator: (val) => validateConfirmPassword(
@@ -195,21 +188,21 @@ class _SignUpState extends State<SignUpScreen> {
                                     trailing:
                                         BlocBuilder<SignUpBloc, SignUpState>(
                                       buildWhen: (old, current) =>
-                                          current is EulaToggleState &&
+                                          current is TaSToggleState &&
                                           old != current,
                                       builder: (context, state) {
-                                        if (state is EulaToggleState) {
-                                          acceptEULA = state.eulaAccepted;
+                                        if (state is TaSToggleState) {
+                                          acceptTaS = state.tasAccepted;
                                         }
                                         return Checkbox(
                                           onChanged: (value) =>
                                               context.read<SignUpBloc>().add(
                                                     ToggleEulaCheckboxEvent(
-                                                      eulaAccepted: value!,
+                                                      tasAccepted: value!,
                                                     ),
                                                   ),
                                           activeColor: kPrimaryColor,
-                                          value: acceptEULA,
+                                          value: acceptTaS,
                                         );
                                       },
                                     ),
@@ -221,11 +214,11 @@ class _SignUpState extends State<SignUpScreen> {
                                             text:
                                                 'By creating an account you agree to our ',
                                             style:
-                                                TextStyle(color: Colors.grey),
+                                                TextStyle(color: kPrimaryLightColor),
                                           ),
                                           TextSpan(
                                             style: const TextStyle(
-                                              color: Colors.blueAccent,
+                                              color: kPrimaryColor,
                                             ),
                                             text: 'Terms of Use',
                                             recognizer: TapGestureRecognizer()
@@ -249,7 +242,7 @@ class _SignUpState extends State<SignUpScreen> {
                                     onPressed: () =>
                                         context.read<SignUpBloc>().add(
                                               ValidateFieldsEvent(_key,
-                                                  acceptEula: acceptEULA),
+                                                  acceptTaS: acceptTaS),
                                             ),
                                     child: Text(
                                       "Sign Up".toUpperCase(),
@@ -294,5 +287,3 @@ class _SignUpState extends State<SignUpScreen> {
     super.dispose();
   }
 }
-
-

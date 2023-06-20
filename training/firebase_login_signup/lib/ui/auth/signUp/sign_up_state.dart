@@ -13,8 +13,8 @@ class SignUpFailureState extends SignUpState {
 
 class ValidFields extends SignUpState {}
 
-class EulaToggleState extends SignUpState {
-  bool eulaAccepted;
+class TaSToggleState extends SignUpState {
+  bool tasAccepted;
 
-  EulaToggleState(this.eulaAccepted);
+  TaSToggleState(this.tasAccepted);
 }

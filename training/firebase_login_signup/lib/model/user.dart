@@ -18,8 +18,6 @@ class User {
   }) : appIdentifier =
             'Flutter Login Screen ${kIsWeb ? 'Web' : Platform.operatingSystem}';
 
-  // String fullName() => '$fullName';
-
   factory User.fromJson(Map<String, dynamic> parsedJson) {
     return User(
       email: parsedJson['email'] ?? '',

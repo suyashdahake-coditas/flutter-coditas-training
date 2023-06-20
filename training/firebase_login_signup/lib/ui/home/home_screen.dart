@@ -7,7 +7,6 @@ import 'package:firebase_login_signup/utils/app_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-
 class HomeScreen extends StatefulWidget {
   final User user;
 

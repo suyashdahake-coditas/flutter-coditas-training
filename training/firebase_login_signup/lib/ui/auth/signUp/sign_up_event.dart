@@ -4,17 +4,15 @@ abstract class SignUpEvent {}
 
 class RetrieveLostDataEvent extends SignUpEvent {}
 
-
-
 class ValidateFieldsEvent extends SignUpEvent {
   GlobalKey<FormState> key;
-  bool acceptEula;
+  bool acceptTaS;
 
-  ValidateFieldsEvent(this.key, {required this.acceptEula});
+  ValidateFieldsEvent(this.key, {required this.acceptTaS});
 }
 
 class ToggleEulaCheckboxEvent extends SignUpEvent {
-  bool eulaAccepted;
+  bool tasAccepted;
 
-  ToggleEulaCheckboxEvent({required this.eulaAccepted});
+  ToggleEulaCheckboxEvent({required this.tasAccepted});
 }

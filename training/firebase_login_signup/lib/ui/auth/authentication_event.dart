@@ -43,6 +43,7 @@ class SignupWithEmailAndPasswordEvent extends AuthenticationEvent {
 class LogoutEvent extends AuthenticationEvent {
   LogoutEvent();
 }
+class SignInWithGoogleEvent extends AuthenticationEvent {}
 
 class FinishedOnBoardingEvent extends AuthenticationEvent {}
 

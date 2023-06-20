@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart' as auth;
 import 'package:firebase_login_signup/constants.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/foundation.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 import '../model/user.dart';
 
@@ -20,9 +21,6 @@ class FireStoreUtils {
     }
   }
 
-  /// login with email and password with firebase
-  /// @param email user email
-  /// @param password user password
   static Future<dynamic> loginWithEmailAndPassword(
       String email, String password) async {
     try {
@@ -58,9 +56,6 @@ class FireStoreUtils {
     }
   }
 
-
-  /// save a new user document in the USERS table in firebase firestore
-  /// returns an error message on failure or null on success
   static Future<String?> createNewUser(User user) async => await firestore
       .collection(usersCollection)
       .doc(user.userID)
@@ -127,6 +122,45 @@ class FireStoreUtils {
       return null;
     }
   }
+  static Future<dynamic> signInWithGoogle() async {
+    try {
+      final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
+      if (googleUser != null) {
+        final GoogleSignInAuthentication googleAuth =
+        await googleUser.authentication;
+
+        final auth.OAuthCredential credential =
+        auth.GoogleAuthProvider.credential(
+          accessToken: googleAuth.accessToken,
+          idToken: googleAuth.idToken,
+        );
+
+        auth.UserCredential result = await auth.FirebaseAuth.instance
+            .signInWithCredential(credential);
+        DocumentSnapshot<Map<String, dynamic>> documentSnapshot = await firestore
+            .collection(usersCollection)
+            .doc(result.user?.uid ?? '')
+            .get();
+        User? user;
+        if (documentSnapshot.exists) {
+          user = User.fromJson(documentSnapshot.data() ?? {});
+        } else {
+          user = User(
+            email: result.user?.email ?? '',
+            fullName: result.user?.displayName ?? '',
+            userID: result.user?.uid ?? '',
+          );
+          await createNewUser(user);
+        }
+        return user;
+      } else {
+        return 'Google sign in canceled.';
+      }
+    } catch (error) {
+      debugPrint('signInWithGoogle Error: $error');
+      return 'Couldn\'t sign in with Google, Please try again.';
+    }
+  }
 
   static Future<dynamic> loginOrCreateUserWithPhoneNumberCredential({
     required auth.PhoneAuthCredential credential,
@@ -139,7 +173,6 @@ class FireStoreUtils {
     if (user != null) {
       return user;
     } else {
-      /// create a new user from phone login
       User user = User(
           fullName: '',
           email: '',
@@ -158,3 +191,4 @@ class FireStoreUtils {
       await auth.FirebaseAuth.instance
           .sendPasswordResetEmail(email: emailAddress);
 }
+

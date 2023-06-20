@@ -89,5 +89,16 @@ class AuthenticationBloc
       user = null;
       emit(const AuthenticationState.unauthenticated());
     });
+
+    on<SignInWithGoogleEvent>((event, emit) async {
+      dynamic result = await FireStoreUtils.signInWithGoogle();
+      user=result;
+      if (user!.email.isNotEmpty) {
+        user = result;
+        emit(AuthenticationState.authenticated(user!));
+      } else if (result is String) {
+        emit(AuthenticationState.unauthenticated(message: result));
+      }
+    });
   }
 }

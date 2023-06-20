@@ -7,3 +7,5 @@ class ValidateLoginFieldsEvent extends LoginEvent {
 
   ValidateLoginFieldsEvent(this.key);
 }
+
+class SignInInWithGoogleLoginEvent extends LoginEvent{}

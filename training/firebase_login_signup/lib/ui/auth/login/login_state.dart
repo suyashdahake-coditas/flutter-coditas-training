@@ -6,6 +6,8 @@ class LoginInitial extends LoginState {}
 
 class ValidLoginFields extends LoginState {}
 
+class SignInWithGoogleState extends LoginState {}
+
 class LoginFailureState extends LoginState {
   String errorMessage;
 

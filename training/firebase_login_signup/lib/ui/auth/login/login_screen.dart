@@ -36,20 +36,6 @@ class _LoginScreen extends State<LoginScreen> {
         return Scaffold(
           body: MultiBlocListener(
             listeners: [
-              BlocListener<AuthenticationBloc, AuthenticationState>(
-                listener: (context, state) async {
-                  await context.read<LoadingCubit>().hideLoading();
-                  if (state.authState == AuthState.authenticated) {
-                    if (!mounted) return;
-                    pushAndRemoveUntil(
-                        context, HomeScreen(user: state.user!), false);
-                  } else {
-                    if (!mounted) return;
-                    showSnackBar(context,
-                        state.message ?? 'Couldn\'t login, Please try again.');
-                  }
-                },
-              ),
               BlocListener<LoginBloc, LoginState>(
                 listener: (context, state) async {
                   if (state is ValidLoginFields) {
@@ -62,6 +48,25 @@ class _LoginScreen extends State<LoginScreen> {
                             password: password!,
                           ),
                         );
+                  } else if (state is SignInWithGoogleState) {
+                    // Dispatch the SignInWithGoogleEvent to the AuthenticationBloc
+                    context
+                        .read<AuthenticationBloc>()
+                        .add(SignInWithGoogleEvent());
+                  }
+                },
+              ),
+              BlocListener<AuthenticationBloc, AuthenticationState>(
+                listener: (context, state) {
+                  context.read<LoadingCubit>().hideLoading();
+                  if (state.authState == AuthState.authenticated) {
+                    pushAndRemoveUntil(
+                        context, HomeScreen(user: state.user!), false);
+                  } else {
+                    showSnackBar(
+                        context,
+                        state.message ??
+                            'Couldn\'t sign up, Please try again.');
                   }
                 },
               ),
@@ -94,8 +99,11 @@ class _LoginScreen extends State<LoginScreen> {
                                 fontSize: 36),
                           ),
                           Image.asset("assets/welcome_screen_ills.jpg"),
-                          const SigninSinupGoogle(
+                          SigninSinupGoogle(
                             text: "Login with Google",
+                            onPress: () => context
+                                .read<LoginBloc>()
+                                .add(SignInInWithGoogleLoginEvent()),
                           ),
                           const OrDivider(),
                           Column(

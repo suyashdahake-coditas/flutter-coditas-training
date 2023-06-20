@@ -16,13 +16,14 @@ dependencies:
   firebase_auth: ^4.6.3
   progress_dialog_null_safe: ^1.0.7
   shared_preferences:
-  cloud_firestore:
+  cloud_firestore: ^4.8.1
   firebase_storage:
   cupertino_icons: ^1.0.2
   flutter_bloc: ^7.3.0
   bloc:
   url_launcher:
   flutter_screenutil:
+  google_sign_in: ^6.1.4
 
 dev_dependencies:
   flutter_test:

@@ -15,8 +15,6 @@ class _SigninSinupGoogleState extends State<SigninSinupGoogle> {
 // final Function onPressed;
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-    Orientation orientation = MediaQuery.of(context).orientation;
     return GestureDetector(
       onTap: widget.onPress as void Function()?,
       child: Container(

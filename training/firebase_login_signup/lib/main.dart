@@ -15,13 +15,12 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  runApp(MultiProvider(
-    providers: [
-      RepositoryProvider(create: (_) => AuthenticationBloc()),
-      RepositoryProvider(create: (_) => LoadingCubit()),
-    ],
-    child: const MyApp(),
-  ));
+  runApp(BlocProvider<AuthenticationBloc>(
+      create: (context) => AuthenticationBloc(),
+      child: BlocProvider<LoadingCubit>(
+        create: (context) => LoadingCubit(),
+        child: const MyApp(),
+      )));
 }
 
 class MyApp extends StatefulWidget {
@@ -32,14 +31,11 @@ class MyApp extends StatefulWidget {
 }
 
 class MyAppState extends State<MyApp> with WidgetsBindingObserver {
-  // Set default `_initialized` and `_error` state to false
   bool _initialized = false;
   bool _error = false;
 
-  // Define an async function to initialize FlutterFire
   void initializeFlutterFire() async {
     try {
-      // Wait for Firebase to initialize and set `_initialized` state to true
       if (kIsWeb) {
         await Firebase.initializeApp(options: DefaultFirebaseOptions.web);
       } else {
@@ -62,25 +58,25 @@ class MyAppState extends State<MyApp> with WidgetsBindingObserver {
     if (_error) {
       return MaterialApp(
           home: Scaffold(
-            body: Container(
-              color: Colors.white,
-              child: Center(
-                  child: Column(
-                    children: const [
-                      Icon(
-                        Icons.error_outline,
-                        color: Colors.red,
-                        size: 25,
-                      ),
-                      SizedBox(height: 16),
-                      Text(
-                        'Failed to initialise firebase!',
-                        style: TextStyle(color: Colors.red, fontSize: 25),
-                      ),
-                    ],
-                  )),
-            ),
-          ));
+        body: Container(
+          color: Colors.white,
+          child: Center(
+              child: Column(
+            children: const [
+              Icon(
+                Icons.error_outline,
+                color: Colors.red,
+                size: 25,
+              ),
+              SizedBox(height: 16),
+              Text(
+                'Failed to initialise firebase!',
+                style: TextStyle(color: Colors.red, fontSize: 25),
+              ),
+            ],
+          )),
+        ),
+      ));
     }
 
     // Show a loader until FlutterFire is initialized
